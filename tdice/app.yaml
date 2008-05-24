@@ -1,0 +1,22 @@
+application: tdice
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+
+- url: /email
+  script: scripts/email.py
+
+- url: /web
+  script: scripts/web.py
+  
+- url: /list
+  script: scripts/list.py
+
+- url: /clean
+  script: scripts/clean.py  
+  
+- url: /admin/.*
+  script: $PYTHON_LIB/google/appengine/ext/admin
+  login: admin
