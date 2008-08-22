@@ -440,8 +440,10 @@
 		<player name="Japanese" optional="false"/>
 		<player name="British" optional="false"/>
 		<player name="Americans" optional="false"/><player name="Russians" optional="false"></player>
+		<player name="Russians" optional="false"/>
 		<alliance player="Americans" alliance="imperial"/>
 		<alliance player="British" alliance="imperial"/><alliance player="Russians" alliance="imperial"></alliance>
+		<alliance player="Russians" alliance="imperial"/>
 	</playerList>
 	<unitList>
 		<unit name="infantry"/>
