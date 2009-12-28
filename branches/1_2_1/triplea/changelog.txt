@@ -1,3 +1,7 @@
+Changes for 1.2.1
+
+* rename nwo map to new_world_order_eb, this is all lowercase which works on linux, and matches the other map names (sgb)
+
 Changes for 1.2
 
 * Fix display of factory damage when unit name is "Factory" rather than "factory" (ComradeKev)
