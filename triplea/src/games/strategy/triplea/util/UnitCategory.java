@@ -29,20 +29,18 @@ public class UnitCategory implements Comparable
     //Collection of UnitOwners, the type of our dependents, not the dependents
     private Collection<UnitOwner> m_dependents;
     private final int m_movement; //movement of the units
-    private final int m_transportCost; //movement of the units
     private final PlayerID m_owner;
     //the units in the category, may be duplicates.
     private final List<Unit> m_units = new ArrayList<Unit>();
 
     private boolean m_damaged = false;
 
-    public UnitCategory(Unit unit, boolean categorizeDependents, boolean categorizeMovement, boolean categorizeTransportcost)
+    public UnitCategory(Unit unit, boolean categorizeDependents, boolean categorizeMovement)
     {
         TripleAUnit taUnit = (TripleAUnit)unit;
         m_type = taUnit.getType();
         m_owner = taUnit.getOwner();
         m_movement = categorizeMovement ? taUnit.getMovementLeft() : -1;
-        m_transportCost = categorizeTransportcost ? UnitAttachment.get(((Unit) unit).getUnitType()).getTransportCost() : -1;        
         m_damaged = (taUnit.getHits() > 0);
         if (categorizeDependents)
             createDependents(taUnit.getDependents());
@@ -51,9 +49,9 @@ public class UnitCategory implements Comparable
     }
 
     
-    public UnitCategory(Unit unit, Collection<Unit> dependents, int movement, int transportCost)
+    public UnitCategory(Unit unit, Collection<Unit> dependents, int movement)
     {
-        this(unit, dependents, movement, false, transportCost);
+        this(unit, dependents, movement, false);
     }
     
     public UnitCategory(UnitType type, PlayerID owner)
@@ -61,17 +59,15 @@ public class UnitCategory implements Comparable
         m_type = type;
         m_dependents = Collections.emptyList();
         m_movement = -1;
-        m_transportCost = -1;
         m_owner = owner;
     
     }
     
 
-    public UnitCategory(Unit unit, Collection<Unit> dependents, int movement, boolean damaged, int transportCost)
+    public UnitCategory(Unit unit, Collection<Unit> dependents, int movement, boolean damaged)
     {
         m_type = unit.getType();
         m_movement = movement;
-        m_transportCost = transportCost;
         m_owner = unit.getOwner();
         m_damaged = damaged;
         m_units.add(unit);
@@ -187,11 +183,6 @@ public class UnitCategory implements Comparable
         return m_movement;
     }
 
-    public int getTransportCost()
-    {
-        return m_transportCost;
-    }
-    
     public PlayerID getOwner()
     {
         return m_owner;

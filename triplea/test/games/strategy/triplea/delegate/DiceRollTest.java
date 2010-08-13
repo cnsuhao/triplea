@@ -14,14 +14,10 @@ import games.strategy.engine.random.ScriptedRandomSource;
 import games.strategy.triplea.Constants;
 import games.strategy.triplea.TripleAUnit;
 import games.strategy.triplea.attatchments.TechAttachment;
-import games.strategy.triplea.attatchments.UnitAttachment;
 import games.strategy.triplea.delegate.Die.DieType;
 import games.strategy.triplea.xml.LoadGameUtil;
-import games.strategy.util.Match;
 
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 import junit.framework.TestCase;
@@ -84,6 +80,7 @@ public class DiceRollTest extends TestCase
         bridge.setRandomSource(new ScriptedRandomSource(new int[] {1}));
         DiceRoll roll4 = DiceRoll.rollDice( infantry, false, russians, bridge, m_data, battle, "");
         assertEquals(0, roll4.getHits());
+        
     }
     
     public void testSimpleLowLuck()
@@ -120,7 +117,9 @@ public class DiceRollTest extends TestCase
         bridge.setRandomSource(new ScriptedRandomSource(new int[] {1}));
         DiceRoll roll4 = DiceRoll.rollDice( infantry, false, russians, bridge, m_data, battle, "");
         assertEquals(0, roll4.getHits());
-    }        
+    }
+    
+    
     
     public void testArtillerySupport()
     {
@@ -137,41 +136,10 @@ public class DiceRollTest extends TestCase
         UnitType artillery = m_data.getUnitTypeList().getUnitType("artillery");
         units.addAll(artillery.create(1, russians));
         
-        //artillery supported infantry and art attack at 1 (0 based)
+        //artileery supported infantry and art attack at 1 (0 based)
         bridge.setRandomSource(new ScriptedRandomSource(new int[] {1,1}));
         DiceRoll roll = DiceRoll.rollDice( units, false, russians, bridge, m_data, battle, "");
         assertEquals(2, roll.getHits());
-    }
-    
-    public void testVariableArtillerySupport()
-    {
-        Territory westRussia = m_data.getMap().getTerritory("West Russia");
-        MockBattle battle = new MockBattle(westRussia);
-        PlayerID russians = m_data.getPlayerList().getPlayerID("Russians");
-        
-        ITestDelegateBridge bridge = getDelegateBridge(russians);
-     
-        //Add 1 artillery
-        UnitType artillery = m_data.getUnitTypeList().getUnitType("artillery");
-        List<Unit> units = artillery.create(1, russians);
-
-        //Set the supported unit count
-        Iterator<Unit> unitsIter= units.iterator();
-        while(unitsIter.hasNext())
-        {
-        	Unit unit = unitsIter.next();
-        	UnitAttachment ua = UnitAttachment.get(unit.getType());
-        	ua.setunitSupportCount("2");            	
-        }
-        
-        //Now add the infantry
-        UnitType infantryType = m_data.getUnitTypeList().getUnitType("infantry");
-        units.addAll(infantryType.create(2, russians));
-        
-        //artillery supported infantry and art attack at 1 (0 based)
-        bridge.setRandomSource(new ScriptedRandomSource(new int[] {1,1,1}));
-        DiceRoll roll = DiceRoll.rollDice( units, false, russians, bridge, m_data, battle, "");
-        assertEquals(3, roll.getHits());
     }
     
     public void testLowLuck()
@@ -194,6 +162,7 @@ public class DiceRollTest extends TestCase
         
         DiceRoll roll = DiceRoll.rollDice( units, true, russians, bridge, m_data, battle, "");
         assertEquals(1, roll.getHits());
+        
     }
 
     public void testSerialize() throws Exception
@@ -212,8 +181,12 @@ public class DiceRollTest extends TestCase
                 
                 Die ignored = new Die(i,j, DieType.IGNORED);
                 assertEquals(ignored, Die.getFromWriteValue(ignored.getCompressedValue()));
+
+                
+
             }
         }
+        
     }
     
     private void makeGameLowLuck()
@@ -319,6 +292,7 @@ public class DiceRollTest extends TestCase
         
         DiceRoll miss = DiceRoll.rollAA(bombers, bridge, westRussia, m_data);
         assertEquals(miss.getHits(), 0);
+        
     }
 
     
@@ -357,7 +331,11 @@ public class DiceRollTest extends TestCase
         fighterList = fighterType.create(6, russians);
         DiceRoll hitNoRoll = DiceRoll.rollAA(fighterList, bridge, westRussia, m_data);
         assertEquals(hitNoRoll.getHits(),1 );
+        
+        
     }
+    
+    
     
     public void testAALowLuckDifferentMovement()
     {        
@@ -382,7 +360,8 @@ public class DiceRollTest extends TestCase
     }
     
     public void testAALowLuckWithRadar()
-    {        
+    {
+        
         makeGameLowLuck();
         Territory westRussia = m_data.getMap().getTerritory("West Russia");
         PlayerID russians = m_data.getPlayerList().getPlayerID("Russians");
@@ -414,6 +393,8 @@ public class DiceRollTest extends TestCase
         fighterList = fighterType.create(6, russians);
         DiceRoll hitNoRoll = DiceRoll.rollAA(fighterList, bridge, westRussia, m_data);
         assertEquals(hitNoRoll.getHits(), 2);
+        
+        
     }
     
     public void testHeavyBombers()
@@ -451,6 +432,7 @@ public class DiceRollTest extends TestCase
         
         assertEquals(1, dice.getRolls(1).size());
         assertEquals(Die.DieType.HIT, dice.getRolls(1).get(0).getType() );
+        
     }
     
     public void testLHTRBomberDefend()
@@ -469,6 +451,7 @@ public class DiceRollTest extends TestCase
         
         assertEquals(1, dice.getRolls(1).size());
         assertEquals(Die.DieType.HIT, dice.getRolls(1).get(0).getType() );
+        
     }
     
     
@@ -562,6 +545,7 @@ public class DiceRollTest extends TestCase
         m_data.getProperties().set(Constants.LHTR_HEAVY_BOMBERS, Boolean.TRUE);
         assertEquals(2, BattleCalculator.getRolls(bombers, british, false) );
         assertEquals(2, BattleCalculator.getRolls(bombers, british, true) );
+
     }
     
 }

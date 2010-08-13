@@ -141,7 +141,7 @@ public class DiceRoll implements Externalizable
 
     /**
      * Roll dice for units.
-     * @param annotation 
+     * @param annotation TODO
      *  
      */
     public static DiceRoll rollDice(List<Unit> units, boolean defending, PlayerID player, IDelegateBridge bridge, GameData data, Battle battle, String annotation)
@@ -155,35 +155,7 @@ public class DiceRoll implements Externalizable
             return rollDiceNormal(units, defending, player, bridge, data, battle, annotation);
         }
     }
-    
-    /**
-     * Roll n-sided dice.
-     * @param annotation 
-     * 0 based, add 1 to get actual die roll
-     */
-    public static DiceRoll rollNDice(IDelegateBridge bridge, int rollCount, int sides, String annotation)
-    {   
-        if (rollCount == 0)
-        {
-            return new DiceRoll(new ArrayList<Die>(), 0);
-        }
 
-        int[] random;        
-        random = bridge.getRandom(sides, rollCount, annotation);
-
-        List<Die> dice = new ArrayList<Die>();
-        int diceIndex = 0;
-
-        for (int i = 0; i < rollCount; i++)
-        {
-            dice.add(new Die(random[diceIndex], 1, DieType.IGNORED ));
-            diceIndex++;
-        }
-
-        DiceRoll rVal = new DiceRoll(dice, rollCount);
-        return rVal;
-    }
-    
     /**
      * Roll dice for units using low luck rules. Low luck rules based on rules
      * in DAAK.
@@ -266,6 +238,7 @@ public class DiceRoll implements Externalizable
     }
 
     /**
+     * TODO: Determine if artillery support is available and how much
      * @param units
      * @param defending
      * @param player
@@ -275,15 +248,8 @@ public class DiceRoll implements Externalizable
     {
         int artillerySupportAvailable = 0;
         if (!defending)
-        {            
-            Collection<Unit> arty = Match.getMatches(units, Matches.UnitIsArtillery);
-            Iterator<Unit> iter = arty.iterator();
-            while (iter.hasNext())
-            {
-            	Unit current = (Unit) iter.next();
-                UnitAttachment ua = UnitAttachment.get(current.getType());
-                artillerySupportAvailable += ua.getUnitSupportCount(current.getOwner());
-            }
+        {
+            artillerySupportAvailable = Match.countMatches(units, Matches.UnitIsArtillery);
 
             //If ImprovedArtillery, double number of units to support
             if(isImprovedArtillerySupport(player))
@@ -386,7 +352,6 @@ public class DiceRoll implements Externalizable
                         strength = ua.getAttack(current.getOwner());
                         if (ua.isArtillerySupportable() && artillerySupportAvailable > 0 && strength < Constants.MAX_DICE)
                         {
-                        	//TODO probably need a map here to properly add artilleryBonus
                             strength++;
                             artillerySupportAvailable--;
                         } 
@@ -396,9 +361,8 @@ public class DiceRoll implements Externalizable
                             if(landUnits.contains(current))
                                 ++strength;
                         } 
-                        //get bombarding unit's strength
-                        if (ua.isSea() && battle.isAmphibious())
-                        	strength = ua.getBombard(current.getOwner());                        	
+                        if (ua.getIsDestroyer() && battle.isAmphibious())
+                        	strength--;
                     }
     
                     boolean hit = strength > random[diceIndex];

@@ -1,48 +1,4 @@
-Changes for 1.2.6
-
-* better server side INode validation (sgb)
-
-* another fix for 2998846 & 3012752 Kamikaze fighters and unloaded troop edit-removal (ComradeKev)
-
-* fix bug 2998846 kamikaze aircraft not working (ComradeKev)
-
-* add isAirTransport(able) to support air dropping units (ComradeKev)
-
-* fix bug 2994004 air landing on newly produced carrier in multi-national SZ disappears (ComradeKev)
- 
-* feature request (2799840) add tech tokens to status tab (ComradeKev)
-
-* update .ico and .png icons (veqryn)
-
-* feature request add dialog showing results of War Bonds (ComradeKev)
-
-* fixed load of PacificTest.java (ComradeKev)
-
-* fix bug 2987400 remove ww2v2 from isNavalBombardCasualtiesReturnFire calculations (ComradeKev)
-
-* fix bug 2981507 isNeutralsImpassable not considered for air non-combat movement (ComradeKev)
-
-* fix bug 2975757 paratroops walking on water with movement >1 (ComradeKev)
-
-* fix bug 2986683 add bombard property to control bombarding attack power (ComradeKev)
-
-* feature 2802942 artillery supporting >1 inf, defaults to 1 (ComradeKev)
-
-* feature 2969513 configurable tech roll cost by player, defaults to 5 (ComradeKev)
-
-* fix bug 2979946 AA Always On only recording last territory casualties (ComradeKev)
-
-* fix bug 2983390 continued battles (subs) not fought when transport bridge used (ComradeKev)
-
-* fix bug 2981407 Can't edit-remove transported units (ComradeKev)
-
-* fix bug 2827064 unload/load trn bug (ComradeKev)
-
-* fix type in battle screen (Bung)
-
-* update cruiser and Italian infantry  (veqryn, crystalct)
-
-Changes for 1.2.5.4 stable
+1.2.5.4
 
 * ask users to restart after downloading a map as workaround to 2981890 (sgb)
 

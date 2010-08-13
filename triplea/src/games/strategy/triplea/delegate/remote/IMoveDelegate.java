@@ -14,7 +14,6 @@
 
 package games.strategy.triplea.delegate.remote;
 
-import games.strategy.engine.data.PlayerID;
 import games.strategy.engine.data.Route;
 import games.strategy.engine.data.Territory;
 import games.strategy.engine.data.Unit;
@@ -23,7 +22,6 @@ import games.strategy.triplea.delegate.UndoableMove;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Remote interface for MoveDelegate
@@ -41,7 +39,15 @@ public interface IMoveDelegate extends IRemote
      */
     public String move(Collection<Unit> units, Route route, Collection<Unit> m_transportsThatCanBeLoaded );
     
-   
+    /**
+     * 
+     * @param units - the units to move
+     * @param route - the route to move along
+     * @param m_bombersThatCanBeLoaded - bombers that can be loaded while moving, must be non null
+     * @return an error message if the move cant be made, null otherwise
+     */
+    public String loadBombers(Collection<Unit> units, Route route, Collection<Unit> m_bombersThatCanBeLoaded);
+
     /**
      * equivalent to move(units, route, Collections.EMPTY_LIST)
      * 
@@ -75,4 +81,5 @@ public interface IMoveDelegate extends IRemote
      * @return a list of Territories with units that can't fight
      */
     public Collection<Territory> getTerritoriesWhereUnitsCantFight();
+    
 }

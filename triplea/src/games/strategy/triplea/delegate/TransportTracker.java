@@ -129,20 +129,34 @@ public class TransportTracker
         return data.getSequence().getStep().getName().endsWith("NonCombatMove");
     }
     
-    
-    public Change unloadTransportChange(TripleAUnit unit, Territory territory, PlayerID id, boolean dependentBattle)
+//    
+//    
+//    
+//    
+//    
+//    /**
+//     * Undo the unload
+//     */
+//    public void undoUnload(Unit unit, Unit transport, PlayerID id)
+//    {
+//        loadTransport(transport, unit, id);
+//        Collection unload = m_unloaded.get(transport);
+//        unload.remove(unit);
+//    }
+//
+    public Change unloadTransportChange(TripleAUnit unit, Territory territory, PlayerID id)
     {
-        CompositeChange change = new CompositeChange();
-        TripleAUnit transport = (TripleAUnit) transportedBy(unit);
-        if(transport == null)
-        	return change;
         
+        TripleAUnit transport = (TripleAUnit) transportedBy(unit);
         assertTransport(transport);
         if(!transport.getTransporting().contains(unit)) 
         {
             throw new IllegalStateException("Not being carried, unit:" + unit + " transport:" + transport);
         }
         
+        CompositeChange change = new CompositeChange();
+        //clear the loaded by
+        //change.add(ChangeFactory.unitPropertyChange(unit, null, TripleAUnit.TRANSPORTED_BY ) );
         ArrayList<Unit> newUnloaded = new ArrayList<Unit>(transport.getUnloaded());
         newUnloaded.add(unit);
         
@@ -151,15 +165,17 @@ public class TransportTracker
         {
             change.add(ChangeFactory.unitPropertyChange(unit, true, TripleAUnit.UNLOADED_IN_COMBAT_PHASE));
             change.add(ChangeFactory.unitPropertyChange(unit, true, TripleAUnit.UNLOADED_AMPHIBIOUS));
-
-            change.add(ChangeFactory.unitPropertyChange(transport, true, TripleAUnit.UNLOADED_IN_COMBAT_PHASE));
-            change.add(ChangeFactory.unitPropertyChange(transport, true, TripleAUnit.UNLOADED_AMPHIBIOUS));
         }
-
-        if(!dependentBattle)
+        
+        Collection<Unit> newCarrying;
+        if(transport.getTransporting().size() == 1) 
         {
-        	change.add(ChangeFactory.unitPropertyChange(unit, null, TripleAUnit.TRANSPORTED_BY ) );
-        }        
+            newCarrying = Collections.emptyList();
+        } else
+        {
+            newCarrying = new ArrayList<Unit>(transport.getTransporting());
+            newCarrying.remove(unit);
+        }
         
         change.add(ChangeFactory.unitPropertyChange(transport, newUnloaded, TripleAUnit.UNLOADED));
         
@@ -185,6 +201,7 @@ public class TransportTracker
                 
         
         change.add(ChangeFactory.unitPropertyChange(unit, Boolean.TRUE, TripleAUnit.LOADED_THIS_TURN  ));
+        //kev added
         change.add(ChangeFactory.unitPropertyChange(transport, true, TripleAUnit.LOADED_THIS_TURN));
         //If the transport was in combat, flag it as being loaded AFTER combat
         if (transport.getWasInCombat())
@@ -242,10 +259,6 @@ public class TransportTracker
             if(taUnit.getWasInCombat()) 
             {
                 change.add(ChangeFactory.unitPropertyChange(unit, Boolean.FALSE, TripleAUnit.WAS_IN_COMBAT));
-            }            
-            if(taUnit.getWasAmphibious()) 
-            {
-                change.add(ChangeFactory.unitPropertyChange(unit, Boolean.FALSE, TripleAUnit.UNLOADED_AMPHIBIOUS));
             }
         }
         return change;

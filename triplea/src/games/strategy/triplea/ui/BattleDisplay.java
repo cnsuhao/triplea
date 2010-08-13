@@ -112,8 +112,8 @@ public class BattleDisplay extends JPanel
     private final CardLayout m_actionLayout = new CardLayout();
     private final JPanel m_messagePanel = new JPanel();
     private final MapPanel m_mapPanel;
-    private final JPanel m_casualtiesInstantPanelDefender = new JPanel();
-    private final JPanel m_casualtiesInstantPanelAttacker = new JPanel();
+    private final JPanel m_causalitiesInstantPanelDefender = new JPanel();
+    private final JPanel m_causalitiesInstantPanelAttacker = new JPanel();
     private final JLabel LABEL_NONE_ATTACKER = new JLabel("None");
     private final JLabel LABEL_NONE_DEFENDER = new JLabel("None");
     
@@ -176,7 +176,9 @@ public class BattleDisplay extends JPanel
 
     public void bombingResults(int[] dice, int cost)
     {
-//TODO Kev here's how to call the sound clip player
+/*
+ * Kev here's how to call the sound clip player
+ */
         ClipPlayer.getInstance().playClip(SoundPath.BOMB, SoundPath.class); //play
         // sound
         m_dicePanel.setDiceRollForBombing(dice, cost);
@@ -211,13 +213,13 @@ public class BattleDisplay extends JPanel
         if (aPlayerID.equals(m_defender))
         {
          
-            lCausalityPanel = m_casualtiesInstantPanelDefender;
+            lCausalityPanel = m_causalitiesInstantPanelDefender;
         
         }
         else
         {
          
-            lCausalityPanel = m_casualtiesInstantPanelAttacker;
+            lCausalityPanel = m_causalitiesInstantPanelAttacker;
         
         }
 
@@ -240,7 +242,7 @@ public class BattleDisplay extends JPanel
         	dependentUnitsReturned.addAll(dependentCollection);
         }
         
-        Iterator killedIter = UnitSeperator.categorize(aKilledUnits, dependentsMap, false, false).iterator();
+        Iterator killedIter = UnitSeperator.categorize(aKilledUnits, dependentsMap, false).iterator();
         while (killedIter.hasNext())
         {
             UnitCategory category = (UnitCategory) killedIter.next();
@@ -765,40 +767,40 @@ public class BattleDisplay extends JPanel
         diceAndSteps.add(m_steps, BorderLayout.WEST);
         diceAndSteps.add(m_actionPanel, BorderLayout.CENTER);
         
-        m_casualtiesInstantPanelAttacker.setLayout(
+        m_causalitiesInstantPanelAttacker.setLayout(
                 new FlowLayout(FlowLayout.LEFT , 2, 2));
-        m_casualtiesInstantPanelAttacker.setBorder(new EtchedBorder(EtchedBorder.LOWERED));
-        m_casualtiesInstantPanelAttacker.add(LABEL_NONE_ATTACKER);
+        m_causalitiesInstantPanelAttacker.setBorder(new EtchedBorder(EtchedBorder.LOWERED));
+        m_causalitiesInstantPanelAttacker.add(LABEL_NONE_ATTACKER);
 
-        m_casualtiesInstantPanelDefender.setLayout(
+        m_causalitiesInstantPanelDefender.setLayout(
                 new FlowLayout(FlowLayout.LEFT , 2, 2));
-        m_casualtiesInstantPanelDefender.setBorder(new EtchedBorder(EtchedBorder.LOWERED));
-        m_casualtiesInstantPanelDefender.add(LABEL_NONE_DEFENDER);
+        m_causalitiesInstantPanelDefender.setBorder(new EtchedBorder(EtchedBorder.LOWERED));
+        m_causalitiesInstantPanelDefender.add(LABEL_NONE_DEFENDER);
 
-        JPanel lInstantCasualtiesPanel = new JPanel();
-        lInstantCasualtiesPanel.setBorder(new EtchedBorder(EtchedBorder.LOWERED));
-        lInstantCasualtiesPanel.setLayout(new GridBagLayout());
+        JPanel lInstantCausalitiesPanel = new JPanel();
+        lInstantCausalitiesPanel.setBorder(new EtchedBorder(EtchedBorder.LOWERED));
+        lInstantCausalitiesPanel.setLayout(new GridBagLayout());
 
-        JLabel lCausalities = new JLabel("Casualties", JLabel.CENTER);
+        JLabel lCausalities = new JLabel("Causalities", JLabel.CENTER);
         lCausalities.setFont(getPlayerComponent(m_attacker).getFont().deriveFont(Font.BOLD, 14));        
-        lInstantCasualtiesPanel.add(
+        lInstantCausalitiesPanel.add(
                 lCausalities,
                 new GridBagConstraints(0, 0, 2, 1, 1.0d, 1.0d, GridBagConstraints.CENTER, GridBagConstraints.BOTH, 
                 new Insets(0, 0, 0, 0), 0, 0));
         
         
         
-        lInstantCasualtiesPanel.add(
-                m_casualtiesInstantPanelAttacker,
+        lInstantCausalitiesPanel.add(
+                m_causalitiesInstantPanelAttacker,
                 new GridBagConstraints(0, 2, 1, 1, 1.0d, 1.0d, GridBagConstraints.CENTER, GridBagConstraints.BOTH, 
                         new Insets(0, 0, 0, 0), 0, 0));
         
-        lInstantCasualtiesPanel.add(
-                m_casualtiesInstantPanelDefender,
+        lInstantCausalitiesPanel.add(
+                m_causalitiesInstantPanelDefender,
                 new GridBagConstraints(1, 2, 1, 1, 1.0d, 1.0d, GridBagConstraints.CENTER, GridBagConstraints.BOTH, 
                         new Insets(0, 0, 0, 0), 0, 0));
         
-        diceAndSteps.add(lInstantCasualtiesPanel, BorderLayout.SOUTH);
+        diceAndSteps.add(lInstantCausalitiesPanel, BorderLayout.SOUTH);
 
         setLayout(new BorderLayout());
         add(north, BorderLayout.NORTH);
@@ -812,8 +814,8 @@ public class BattleDisplay extends JPanel
             m_actionButton.setForeground(Color.white);
         }
 
-        setDefaultWidths(defenderTable);
-        setDefaultWidths(attackerTable);
+        setDefaultWidhts(defenderTable);
+        setDefaultWidhts(attackerTable);
         
         
         Action continueAction = new AbstractAction()
@@ -839,7 +841,7 @@ public class BattleDisplay extends JPanel
     /**
      * Shorten columns with no units.
      */
-    private void setDefaultWidths(JTable table)
+    private void setDefaultWidhts(JTable table)
     {
 
         for (int column = 0; column < table.getColumnCount(); column++)
@@ -910,6 +912,15 @@ public class BattleDisplay extends JPanel
         return new JLabel(new ImageIcon(finalImage));
 
     }
+    
+    /**
+     * @return
+     */
+   /* private static boolean isTransportCasualtiesRestricted(GameData data)
+    {
+    	return games.strategy.triplea.Properties.getTransportCasualtiesRestricted(data);
+    }*/
+
 }
 
 class BattleTable extends JTable
@@ -963,7 +974,7 @@ class BattleModel extends DefaultTableModel
         m_units = new ArrayList<Unit>(units);
     }
 
-    public void notifyRetreat(Collection<Unit> retreating)
+    public void notifyRetreat(Collection retreating)
     {
         m_units.removeAll(retreating);
         refresh();
@@ -991,7 +1002,7 @@ class BattleModel extends DefaultTableModel
         }
 
         //Determine if artillery support is available and how much
-        int artillerySupportAvailable = getArtillerySupportAvailable(m_units, m_attack);
+        int artillerySupportAvailable = getArtillerySupportAvailable(m_units);
 
         Collection unitCategories = UnitSeperator.categorize(m_units);
 
@@ -1012,12 +1023,12 @@ class BattleModel extends DefaultTableModel
                 	++strength;
 	        } 
             else
+                //If it's a sneak attack, all but Chinese defend at a 1
             {
                 strength = attachment.getDefense(category.getOwner());
                 m_data.acquireReadLock();
                 try
                 {
-                	//decrease strength of sneak attack defenders
 	                if( DiceRoll.isFirstTurnLimitedRoll(category.getOwner()))
 	                    strength = Math.min(1, strength);
                 } finally {
@@ -1088,28 +1099,19 @@ class BattleModel extends DefaultTableModel
      * @param player
      * @return
      */
-    private static int getArtillerySupportAvailable(Collection<Unit> units, boolean attack)
+    private static int getArtillerySupportAvailable(Collection<Unit> units)
     {
-    	//TODO refactor with DiceRoll.getArtillerySupportAvailable
-    	int artillerySupportAvailable = 0;
-        if (attack)
-        {            
-            Collection<Unit> arty = Match.getMatches(units, Matches.UnitIsArtillery);
-            Iterator<Unit> iter = arty.iterator();
-            PlayerID player = null;
-
-            while (iter.hasNext())
-            {
-            	Unit current = (Unit) iter.next();
-            	player = current.getOwner();
-            	UnitAttachment ua = UnitAttachment.get(current.getType());
-            	artillerySupportAvailable += ua.getUnitSupportCount(current.getOwner());
-            }
+        int artillerySupportAvailable = Match.countMatches(units, Matches.UnitIsArtillery);
+        
+        Iterator <Unit> unitsIter = units.iterator();
+        if(unitsIter.hasNext())
+        {
+            Unit aUnit = unitsIter.next();
+            PlayerID player = aUnit.getOwner();
 
             //If ImprovedArtillery, double number of units to support
-            if(player != null && isImprovedArtillerySupport(player))
-            	artillerySupportAvailable *= 2;
-            
+            if(isImprovedArtillerySupport(player))
+                artillerySupportAvailable *= 2;
         }
         
         return artillerySupportAvailable;
@@ -1209,7 +1211,7 @@ class CasualtyNotificationPanel extends JPanel
             m_killed.add(new JLabel("Killed"));
         }
         
-        Iterator killedIter = UnitSeperator.categorize(killed, dependents, false, false).iterator();
+        Iterator killedIter = UnitSeperator.categorize(killed, dependents, false).iterator();
         categorizeUnits(killedIter, false);
 
         damaged.removeAll(killed);
@@ -1217,7 +1219,7 @@ class CasualtyNotificationPanel extends JPanel
         {
             m_damaged.add(new JLabel("Damaged"));
         }
-        Iterator damagedIter = UnitSeperator.categorize(damaged, dependents, false, false).iterator();
+        Iterator damagedIter = UnitSeperator.categorize(damaged, dependents, false).iterator();
         categorizeUnits(damagedIter, true);
 
         invalidate();
@@ -1237,12 +1239,10 @@ class CasualtyNotificationPanel extends JPanel
             while (iter.hasNext())
             {
                 UnitOwner owner = (UnitOwner) iter.next();
-              //Don't use damaged icons for dependent units (bug 2984310)?
-                unit.add(new JLabel(m_uiContext.getUnitImageFactory().getIcon(owner.getType(), owner.getOwner(), m_data, false)));
-                /*//we don't want to use the damaged icon for units that have just been damaged
+                //we don't want to use the damaged icon for units that have just
+                // been damaged
                 boolean useDamagedIcon = category.getDamaged() && !damaged;
                 unit.add(new JLabel(m_uiContext.getUnitImageFactory().getIcon(owner.getType(), owner.getOwner(), m_data, useDamagedIcon)));
-                */
             }
             panel.add(new JLabel("x " + category.getUnits().size()));
             if (damaged)

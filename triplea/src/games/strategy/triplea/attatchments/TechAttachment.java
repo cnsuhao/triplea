@@ -35,7 +35,6 @@ public class TechAttachment extends DefaultAttachment
     return attatchment;
   }
 
-  private int m_techCost;
   private boolean m_heavyBomber;
   private boolean m_longRangeAir;
   private boolean m_jetPower;
@@ -50,11 +49,6 @@ public class TechAttachment extends DefaultAttachment
   private boolean m_mechanizedInfantry;
   private boolean m_aARadar;
   private boolean m_shipyards;
-
-  public void setTechCost(String s)
-  {
-      m_techCost = getInt(s);
-  }
   
   public void setHeavyBomber(String s)
   {
@@ -132,11 +126,6 @@ public class TechAttachment extends DefaultAttachment
     return "" + m_heavyBomber;
   }
 
-  public String getTechCost()
-  {
-    return "" + (m_techCost >0 ? m_techCost : Constants.TECH_ROLL_COST);
-  }
-  
   public String getLongRangeAir()
   {
     return "" + m_longRangeAir;

@@ -17,7 +17,6 @@ package games.strategy.triplea.util;
 
 import games.strategy.engine.data.Unit;
 import games.strategy.triplea.TripleAUnit;
-import games.strategy.triplea.attatchments.UnitAttachment;
 import games.strategy.triplea.delegate.Matches;
 
 import java.util.Collection;
@@ -43,12 +42,12 @@ public class UnitSeperator
 
     public static Set<UnitCategory> categorize(Collection<Unit> units)
     {
-        return categorize(units, null, false, false);
+        return categorize(units, null, false);
     }
 
-    public static Set<UnitCategory> categorize(Collection<Unit> units, Map<Unit, Collection<Unit>> dependent, boolean categorizeMovement, boolean categorizeTransportCost, boolean sort)
+    public static Set<UnitCategory> categorize(Collection<Unit> units, Map<Unit, Collection<Unit>> dependent, boolean categorizeMovement, boolean sort)
     {
-        return categorize(units, dependent, categorizeMovement, categorizeTransportCost, /*ctgzTrnMovement*/ false, sort);
+        return categorize(units, dependent, categorizeMovement, /*ctgzTrnMovement*/ false, sort);
     }
 
     /**
@@ -65,8 +64,7 @@ public class UnitSeperator
      */
     public static Set<UnitCategory> categorize(Collection<Unit> units, 
                                                Map<Unit, Collection<Unit>> dependent, 
-                                               boolean categorizeMovement,  
-                                               boolean categorizeTransportCost, 
+                                               boolean categorizeMovement, 
                                                boolean categorizeTrnMovement,
                                                boolean sort)
     {
@@ -86,17 +84,13 @@ public class UnitSeperator
             if(categorizeMovement || (categorizeTrnMovement && Matches.UnitIsTransport.match(current)))
                 unitMovement = TripleAUnit.get(current).getMovementLeft();
 
-            int unitTransportCost = -1;
-            if(categorizeTransportCost)
-            	unitTransportCost = UnitAttachment.get(((Unit) current).getUnitType()).getTransportCost();
-
             Collection<Unit> currentDependents = null;
             if(dependent != null)
             {
                 currentDependents = dependent.get(current);
             }
             boolean damaged = current.getHits() == 1;
-            UnitCategory entry = new UnitCategory(current, currentDependents, unitMovement, damaged, unitTransportCost);
+            UnitCategory entry = new UnitCategory(current, currentDependents, unitMovement, damaged);
 
             //we test to see if we have the key using equals, then since
             //key maps to key, we retrieve it to add the unit to the correct
@@ -128,10 +122,10 @@ public class UnitSeperator
      * @param categorizeMovement   - whether to categorize by movement
      * @return a Collection of UnitCategories
      */
-    public static Set<UnitCategory> categorize(Collection<Unit> units, Map<Unit, Collection<Unit>> dependent, boolean categorizeMovement, boolean categorizeTransportCost)
+    public static Set<UnitCategory> categorize(Collection<Unit> units, Map<Unit, Collection<Unit>> dependent, boolean categorizeMovement)
     {
         // sort by default
-        return categorize(units, dependent, categorizeMovement, categorizeTransportCost, true);
+        return categorize(units, dependent, categorizeMovement, true);
     }
 
 }

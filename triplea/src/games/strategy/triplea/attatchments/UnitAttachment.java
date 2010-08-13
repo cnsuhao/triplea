@@ -48,8 +48,6 @@ public class UnitAttachment extends DefaultAttachment
   private boolean m_isAA = false;   
   private boolean m_isFactory = false;
   private boolean m_canBlitz = false;
-  private boolean m_isAirTransport = false;
-  private boolean m_isAirTransportable = false;
   private boolean m_isSub = false;
   private boolean m_canBombard = false;
   private boolean m_isStrategicBomber = false;
@@ -70,11 +68,6 @@ public class UnitAttachment extends DefaultAttachment
   //-1 if cant land on a carrier
   private int m_carrierCost = -1;
 
-  private int m_bombard = -1;
-  private int m_unitSupportCount = -1;
-  //TODO future use KEV
-  // future private int m_artilleryBonus = -1;
-  
 
   private int m_movement = 0;
   private int m_attack = 0;
@@ -89,28 +82,9 @@ public class UnitAttachment extends DefaultAttachment
   //does nothing, kept to avoid breaking maps
   public void setIsParatroop(String s) {}
 
-  //does nothing, used to keep compatibility with older xml files
+  //does nothing, used to keep compatability with older xml files
   public void setIsMechanized(String s) {}
 
-  public void setIsAirTransport(String s)
-  {
-	  m_isAirTransport = getBool(s);
-  }
-
-  public boolean isAirTransport()
-  {
-    return m_isAirTransport;
-  }
-
-  public void setIsAirTransportable(String s)
-  {
-	  m_isAirTransportable = getBool(s);
-  }
-
-  public boolean isAirTransportable()
-  {
-    return m_isAirTransportable;
-  }
 
   public void setCanBlitz(String s)
   {
@@ -308,22 +282,6 @@ public class UnitAttachment extends DefaultAttachment
   {
     m_isArtillerySupportable = getBool(s);
   }
-  
-  //TODO future use KEV
-  /*public int getArtilleryBonus()
-  {
-    return m_artilleryBonus >0 ? m_artilleryBonus : 1;
-  }
-  
-  public void setArtilleryBonus(String s)
-  {
-	  m_artilleryBonus = getInt(s);
-  }*/
-
-  public void setunitSupportCount(String s)
-  {
-	  m_unitSupportCount = getInt(s);
-  }
 
   
   
@@ -354,11 +312,6 @@ public class UnitAttachment extends DefaultAttachment
     m_attack = getInt(s);
   }
 
-  public void setBombard(String s)
-  {
-    m_bombard = getInt(s);
-  }
-  
   public int getAttack(PlayerID player)
   {
     if(m_isSub)
@@ -376,17 +329,6 @@ public class UnitAttachment extends DefaultAttachment
     return m_attack;
   }
 
-
-  public int getBombard(PlayerID player)
-  {
-	  return m_bombard > 0 ? m_bombard : m_attack;
-  }
-
-  public int getUnitSupportCount(PlayerID player)
-  {
-	  return m_unitSupportCount >0 ? m_unitSupportCount : 1;
-  }
-  
   int getRawAttack()
   {
       return m_attack;
@@ -467,7 +409,6 @@ public class UnitAttachment extends DefaultAttachment
         m_isStrategicBomber ||
         m_isSub ||
         m_carrierCapacity != -1 ||
-        m_bombard != -1 ||
         m_transportCapacity != -1
         )
         throw new GameParseException("Invalid Unit Attatchment" + this);
@@ -499,8 +440,7 @@ public class UnitAttachment extends DefaultAttachment
   {
     return
     " blitz:" + m_canBlitz +
-    " canBombard:" +m_canBombard +
-    " Bombard:" +m_bombard +
+    " bombard:" +m_canBombard +
     " aa:" +m_isAA +
     " air:" +m_isAir +
     " factory:" +m_isFactory +

@@ -244,10 +244,6 @@ class AAInMoveUtil implements Serializable
         
         m_bridge.getHistoryWriter().addChildToEvent(MyFormatter.unitsToTextNoOwner(casualties) + " lost in " + territory.getName(), casualties);
         units.removeAll(casualties);
-        
-        if(m_casualties == null)
-        	m_casualties = casualties;
-        else
-        	m_casualties.addAll(casualties);
+        m_casualties = casualties;
     }    
 }

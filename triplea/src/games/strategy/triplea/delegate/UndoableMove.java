@@ -21,7 +21,6 @@ import games.strategy.engine.data.*;
 import games.strategy.engine.delegate.IDelegateBridge;
 import games.strategy.util.*;
 import games.strategy.triplea.delegate.dataObjects.*;
-import games.strategy.triplea.ui.MovePanel;
 
 /**
  * Contains all the data to describe a move and to undo it.
@@ -193,8 +192,7 @@ public class UndoableMove implements Serializable
             }
         }
         
-        //Clear any temporary dependents
-        MovePanel.clearDependents(m_units);        
+        
     }
 
     /**

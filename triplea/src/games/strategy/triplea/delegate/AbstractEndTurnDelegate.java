@@ -38,8 +38,6 @@ import games.strategy.triplea.attatchments.TechAttachment;
 import games.strategy.triplea.attatchments.TerritoryAttachment;
 import games.strategy.triplea.delegate.remote.IAbstractEndTurnDelegate;
 import games.strategy.triplea.formatter.MyFormatter;
-import games.strategy.triplea.player.ITripleaPlayer;
-import games.strategy.triplea.ui.display.ITripleaDisplay;
 import games.strategy.util.CompositeMatchAnd;
 import games.strategy.util.IntegerMap;
 import games.strategy.util.Match;
@@ -78,6 +76,7 @@ public abstract class AbstractEndTurnDelegate
     private boolean doBattleShipsRepair()
     {
     	return games.strategy.triplea.Properties.getBattleships_Repair_At_End_Of_Round(m_data);
+        //return m_data.getProperties().get(Constants.TWO_HIT_BATTLESHIPS_REPAIR_EACH_TURN, false);
     }
 
 
@@ -103,19 +102,22 @@ public abstract class AbstractEndTurnDelegate
         Collection<Territory> territories = gameData.getMap().getTerritoriesOwnedBy(player);
 
         int toAdd = getProduction(territories);
-        int total = player.getResources().getQuantity(PUs) + toAdd;
-
-        String transcriptText = player.getName() + " collect " + toAdd + MyFormatter.pluralize(" PU", toAdd)+"; end with " + total+ MyFormatter.pluralize(" PU", total) + " total";
-        aBridge.getHistoryWriter().startEvent(transcriptText);
-        
+        //Add the War Bond dialog
         if(isWarBonds(player))
         {
-        	int bonds = rollWarBonds(aBridge);
-        	total += bonds;
-        	toAdd += bonds;
-       	 	transcriptText = player.getName() + " collect " + bonds + MyFormatter.pluralize(" PU", bonds)+" from War Bonds; end with " + total + MyFormatter.pluralize(" PU", total) + " total";
-            aBridge.getHistoryWriter().startEvent(transcriptText);
+            int[] randomRoll;
+            String annotation = player + " Roll to resolve War Bonds:";
+            
+            randomRoll = aBridge.getRandom(Constants.MAX_DICE, 1, annotation);
+
+            m_bridge.getHistoryWriter().startEvent("Roll to resolve War Bonds:" + MyFormatter.asDice(randomRoll));
+            
+            toAdd += randomRoll[0]+1;
         }
+        
+        int total = player.getResources().getQuantity(PUs) + toAdd;
+        String transcriptText = player.getName() + " collect " + toAdd + MyFormatter.pluralize(" PU", toAdd)+"; end with " + total+ MyFormatter.pluralize(" PU", total) + " total";
+        aBridge.getHistoryWriter().startEvent(transcriptText);
 
         Change change = ChangeFactory.changeResourcesChange(player, PUs, toAdd);
         aBridge.addChange(change);
@@ -143,27 +145,7 @@ public abstract class AbstractEndTurnDelegate
         	changeUnitOwnership(aBridge, gameData);
         }
     }
-    
-    private int rollWarBonds(IDelegateBridge aBridge)
-    {
-    	PlayerID player = aBridge.getPlayerID();
-    	int count = 1;
-    	int sides = Constants.MAX_DICE;
-    	String annotation = player.getName() + " roll to resolve War Bonds: ";
 
-    	DiceRoll dice;
-    	dice = DiceRoll.rollNDice(aBridge, count, sides, annotation);
-    	int total = dice.getDie(0).getValue() + 1;
-//TODO kev add dialog showing dice when built
-    	getRemotePlayer(player).reportMessage(annotation + total);
-    	return total;
-    }
-    
-    private ITripleaPlayer getRemotePlayer(PlayerID player)
-    {
-    	return (ITripleaPlayer) m_bridge.getRemote(player);
-    }
-    
     private void repairBattleShips(IDelegateBridge aBridge)
     {
        Match<Unit> damagedBattleship = new CompositeMatchAnd<Unit>(Matches.UnitIsTwoHit, Matches.UnitIsDamaged);
