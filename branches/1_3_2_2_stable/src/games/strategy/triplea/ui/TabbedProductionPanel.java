@@ -99,7 +99,7 @@ public class TabbedProductionPanel extends ProductionPanel
         	m_maxColumns = Math.max(8, Math.min(16, new BigDecimal(m_rules.size()).divide(new BigDecimal(5),BigDecimal.ROUND_UP).intValue()));
         
         m_rows = Math.max(2, new BigDecimal(m_rules.size()).divide(new BigDecimal(m_maxColumns),BigDecimal.ROUND_UP).intValue());
-        m_columns = new BigDecimal(m_rules.size()).divide(new BigDecimal(m_rows), BigDecimal.ROUND_UP).intValue();
+        m_columns = Math.max(3, new BigDecimal(m_rules.size()).divide(new BigDecimal(m_rows), BigDecimal.ROUND_UP).intValue());
         
         
         if(allRules.size()>0) {
