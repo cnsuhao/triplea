@@ -1,0 +1,1 @@
+As far as I know, all the images contained in these subfolders are released as open-source content, so likewise they can be used by others for open-source purposes. If you want the details, have a look at the gpl.txt file in the License folder.

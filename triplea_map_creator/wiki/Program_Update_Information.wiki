@@ -1,0 +1,5 @@
+#summary Webpage accessed through the program that lets it know when an update is available.
+
+-~=
+LatestVersion: 2.0.0.1-eol!Message: Fixed some image saving issues and increased default max java heap size setting.-eol!-eol!LatestStableVersion: N/A-eol!Message: N/A
+-~=

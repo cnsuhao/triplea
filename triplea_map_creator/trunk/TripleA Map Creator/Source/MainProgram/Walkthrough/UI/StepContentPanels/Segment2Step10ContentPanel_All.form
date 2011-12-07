@@ -1,0 +1,143 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+
+<Form version="1.7" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" max="-2" attributes="0">
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="v_labelAlignHelper" max="32767" attributes="1"/>
+                  <Component id="v_mapPropListTreeScrollPane" alignment="0" pref="324" max="32767" attributes="1"/>
+              </Group>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="v_propIsEditable" min="-2" max="-2" attributes="0"/>
+                  <Component id="v_propValuePanel" pref="371" max="32767" attributes="1"/>
+                  <Component id="v_labelAlignHelper2" pref="371" max="32767" attributes="1"/>
+              </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="v_labelAlignHelper" min="-2" pref="19" max="-2" attributes="0"/>
+                  <Component id="v_labelAlignHelper2" min="-2" pref="19" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="v_mapPropListTreeScrollPane" max="32767" attributes="2"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="v_propIsEditable" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="v_propValuePanel" pref="292" max="32767" attributes="2"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="v_mapPropListTreeScrollPane">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="v_mapPropListTreeScrollPane" noResource="true"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTree" name="v_mapPropertyListTree">
+          <Properties>
+            <Property name="model" type="javax.swing.tree.TreeModel" editor="org.netbeans.modules.form.editors2.TreeModelEditor">
+              <TreeModel code="Properties&#xa; General&#xa;  4th Edition&#xa;  Pacific Edition&#xa;  Anniversary Edition&#xa; Production&#xa;  LHTR Carrier production rules&#xa;  Anniversary Edition Land Production&#xa;  Anniversary Edition Air Naval&#xa;  SBR Affects Unit Production&#xa; Technology&#xa;  Selectable Tech Roll&#xa;  AA50 Tech Model&#xa;  Tech Development&#xa;  Continuous Research&#xa; Battles&#xa;  neutralCharge&#xa;  Two hit battleship&#xa;  Partial Amphibious Retreat&#xa;  All Rockets Attack&#xa;  Random AA Casualties&#xa;  Roll AA Individually&#xa;  SBR Victory Points&#xa;  Allied Air Dependents&#xa;  Defending Subs Sneak Attack&#xa;  Attacker Retreat Planes&#xa;  Surviving Air Move To Land&#xa;  Sub Retreat Before Battle&#xa; Victories&#xa;  Total Victory&#xa;  Honorable Surrender&#xa;  Projection of Power&#xa;  No Economic Victory&#xa; Limits&#xa;  Limit SBR Damage To Factory Production&#xa;  Limit SBR Damage Per Turn&#xa;  Limit Rocket Damage Per Turn&#xa;  Territory Turn Limit&#xa; Restrictions&#xa;  maxFactoriesPerTerritory&#xa;  Neutrals Are Impassable&#xa;  Rockets Can Violate Neutrality&#xa;  Rockets Can Fly Over Impassables&#xa;  Placement Restricted By Factory&#xa;  Transport Restricted Unload&#xa;  Rocket Attack Per Factory Restricted&#xa;  Naval Bombard Casualties Return Fire Restricted&#xa;  Blitz Through Factories And AA Restricted&#xa;  Unit Placement In Enemy Seas&#xa;  Sub Control Sea Zone Restricted&#xa;  Production Per X Territories Restricted&#xa;  Production Per Valued Territory Restricted&#xa;  Place in Any Territory&#xa;  Unit Placement Per Territory Restricted&#xa;  Movement By Territory Restricted&#xa;  Transport Casualties Restricted&#xa;  Air Attack Sub Restricted&#xa;  Sub Retreat DD Restricted&#xa;  Shore Bombard Per Ground Unit Restricted&#xa;  AA Territory Restricted&#xa; Miscellaneous&#xa;  Always on AA&#xa;  Transport Control Sea Zone&#xa;  Ignore Transport In Movement&#xa;  Ignore Sub In Movement&#xa;  Hari-Kari Units&#xa;  Unplaced units live when not placed&#xa;  National Objectives&#xa; Special&#xa;  Occupied Territories"/>
+            </Property>
+            <Property name="name" type="java.lang.String" value="v_mapPropertyListTree" noResource="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="valueChanged" listener="javax.swing.event.TreeSelectionListener" parameters="javax.swing.event.TreeSelectionEvent" handler="v_mapPropertyListTreeValueChanged"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="v_propValuePanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder/>
+          </Border>
+        </Property>
+        <Property name="name" type="java.lang.String" value="v_propValuePanel" noResource="true"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+        <Property name="columns" type="int" value="0"/>
+        <Property name="rows" type="int" value="1"/>
+      </Layout>
+    </Container>
+    <Container class="javax.swing.JPanel" name="v_labelAlignHelper2">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="v_labelAlignHelper2" noResource="true"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="jLabel2.text"/>
+            <Property name="name" type="java.lang.String" value="jLabel2" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="0" gridY="0" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="v_labelAlignHelper">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="v_labelAlignHelper" noResource="true"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="jLabel3.text"/>
+            <Property name="name" type="java.lang.String" value="jLabel3" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="0" gridY="0" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JCheckBox" name="v_propIsEditable">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="v_propIsEditable.text"/>
+        <Property name="name" type="java.lang.String" value="v_propIsEditable" noResource="true"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>

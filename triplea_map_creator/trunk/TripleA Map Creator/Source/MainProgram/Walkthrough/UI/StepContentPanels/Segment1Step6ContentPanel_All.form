@@ -1,0 +1,235 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="v_toolbarPanel" alignment="0" pref="882" max="32767" attributes="0"/>
+          <Component id="v_scrollPane" alignment="0" pref="882" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <Component id="v_scrollPane" pref="475" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="v_toolbarPanel" min="-2" pref="62" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="v_scrollPane">
+      <Properties>
+        <Property name="autoscrolls" type="boolean" value="true"/>
+        <Property name="name" type="java.lang.String" value="v_scrollPane" noResource="true"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="v_scrollPanePanel">
+          <Properties>
+            <Property name="autoscrolls" type="boolean" value="true"/>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[0, 0]"/>
+            </Property>
+            <Property name="name" type="java.lang.String" value="v_scrollPanePanel" noResource="true"/>
+          </Properties>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="false"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="v_drawingLabel">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="v_drawingLabel" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="v_drawingLabeldrawingMouseDown"/>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="v_drawingLabeldrawingMouseReleased"/>
+                <EventHandler event="mouseDragged" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="v_drawingLabeldrawingMouseDragged"/>
+                <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="v_drawingLabelMouseMoved"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JLabel()&#xa;{&#xa;    public void paint(Graphics graphics)&#xa;    {&#xa;        Graphics2D g = (Graphics2D) graphics;&#xa;        g.drawImage(m_image, 0, 0, this);&#xa;        g.setFont(Constants.MapFont_Bold);&#xa;&#xa;        g.setColor(Color.yellow);&#xa;        if(m_current != null)&#xa;        {&#xa;            for(Polygon cur : m_current)&#xa;            {&#xa;                g.fillPolygon(cur);&#xa;            }&#xa;        }&#xa;        g.setColor(Color.black);&#xa;        for(List&lt;Polygon&gt; polygons : GetMapData().GetTPolygons().values())&#xa;        {&#xa;            for(Polygon item : polygons)&#xa;            {&#xa;                g.drawPolygon(item.xpoints, item.ypoints, item.npoints);&#xa;            }&#xa;        }&#xa;        g.setColor(Constants.SafeGreenColor);&#xa;        g.setStroke(new BasicStroke(3, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));&#xa;        for (Entry&lt;String, ArrayList&lt;Point&gt;&gt; entry : m_uPlacements.entrySet())&#xa;        {&#xa;            String t = entry.getKey();&#xa;            for (Point p : entry.getValue())&#xa;            {&#xa;                g.drawRect(p.x, p.y, (int) (48 * GetMapData().GetUnitScale()), (int) (48 * GetMapData().GetUnitScale()));&#xa;            }&#xa;        }&#xa;        g.setColor(Color.red);&#xa;        if(m_currentName != null &amp;&amp; m_uPlacements.containsKey(m_currentName) &amp;&amp; m_uPlacements.get(m_currentName).size() &gt; 0)&#xa;        {&#xa;            for (Point p : m_uPlacements.get(m_currentName))&#xa;            {&#xa;                g.drawRect(p.x, p.y, (int) (48 * GetMapData().GetUnitScale()), (int) (48 * GetMapData().GetUnitScale()));&#xa;            }&#xa;        }&#xa;        g.setColor(Color.black);&#xa;        for (Point p : GetMapData().GetTDefinitions().values())&#xa;        {&#xa;            g.fillOval(p.x - 5, p.y - 5, 10, 10);&#xa;        }&#xa;        g.setColor(Constants.SafeGreenColor);&#xa;        for (Point p : GetMapData().GetTDefinitions().values())&#xa;        {&#xa;            g.fillOval(p.x - 3, p.y - 3, 6, 6);&#xa;        }&#xa;        g.setColor(Color.black);&#xa;        for (String s : GetMapData().GetTDefinitions().keySet())&#xa;        {&#xa;            g.drawString(s, GetMapData().GetTDefinitions().get(s).x + 10, GetMapData().GetTDefinitions().get(s).y + 5);&#xa;        }&#xa;        if(m_previewTool)&#xa;        {&#xa;            g.setColor(Color.red);&#xa;            g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, .5F));&#xa;            g.drawRect(m_lastImageP.x, m_lastImageP.y, (int) (48 * GetMapData().GetUnitScale()), (int) (48 * GetMapData().GetUnitScale()));&#xa;        }&#xa;    }&#xa;}"/>
+                <AuxValue name="generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+              </AuxValues>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="0" y="0" width="800" height="400"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="v_toolbarPanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+            <BevelBorder/>
+          </Border>
+        </Property>
+        <Property name="name" type="java.lang.String" value="v_toolbarPanel" noResource="true"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[725, 62]"/>
+        </Property>
+        <Property name="requestFocusEnabled" type="boolean" value="false"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="false"/>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="v_autoFillButton">
+          <Properties>
+            <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+              <action class="MainProgram.Walkthrough.UI.StepContentPanels.Segment1Step6ContentPanel_All" id="AutoFillClicked" methodName="AutoFillClicked"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" resourceKey="v_clearScreenButton.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="v_autoFillButton.text"/>
+            <Property name="toolTipText" type="java.lang.String" resourceKey="v_autoFillButton.toolTipText"/>
+            <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+              <Insets value="[0, 0, 0, 0]"/>
+            </Property>
+            <Property name="name" type="java.lang.String" value="v_autoFillButton" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="3" y="3" width="55" height="55"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JButton" name="v_clearScreenButton">
+          <Properties>
+            <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+              <action class="MainProgram.Walkthrough.UI.StepContentPanels.Segment1Step6ContentPanel_All" id="ClearScreen" methodName="ClearScreen"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" resourceKey="v_clearScreenButton.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="v_clearScreenButton.text"/>
+            <Property name="toolTipText" type="java.lang.String" resourceKey="v_clearScreenButton.toolTipText"/>
+            <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+              <Insets value="[0, 0, 0, 0]"/>
+            </Property>
+            <Property name="name" type="java.lang.String" value="v_clearScreenButton" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="63" y="3" width="55" height="55"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Container class="javax.swing.JPanel" name="jPanel2">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                <EtchetBorder/>
+              </Border>
+            </Property>
+            <Property name="name" type="java.lang.String" value="jPanel2" noResource="true"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[4, 68]"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="285" y="0" width="4" height="61"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="57" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+        </Container>
+        <Component class="javax.swing.JLabel" name="v_territoryLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="v_clearScreenButton.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="v_territoryLabel.text"/>
+            <Property name="name" type="java.lang.String" value="v_territoryLabel" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="300" y="7" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JLabel" name="v_terDrawingPointsCountLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="v_clearScreenButton.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="v_terDrawingPointsCountLabel.text"/>
+            <Property name="name" type="java.lang.String" value="v_terDrawingPointsCountLabel" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="300" y="24" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JLabel" name="v_totalDrawingPointCountLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="v_clearScreenButton.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="v_totalDrawingPointCountLabel.text"/>
+            <Property name="name" type="java.lang.String" value="v_totalDrawingPointCountLabel" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="300" y="40" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="v_placementOverlapSpinner">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="v_clearScreenButton.font"/>
+            <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+              <SpinnerModel initial="0" maximum="20" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" resourceKey="v_placementOverlapSpinner.toolTipText"/>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[47, 25]"/>
+            </Property>
+            <Property name="name" type="java.lang.String" value="v_placementOverlapSpinner" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="225" y="10" width="50" height="25"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="v_clearScreenButton.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="jLabel1.text"/>
+            <Property name="name" type="java.lang.String" value="jLabel1" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="130" y="16" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

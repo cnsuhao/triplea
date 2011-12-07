@@ -1,0 +1,1 @@
+The tmap file one folder up contains all the information that has been exported to this folder. This sub-folder is just here so you don't have to export it yourself.

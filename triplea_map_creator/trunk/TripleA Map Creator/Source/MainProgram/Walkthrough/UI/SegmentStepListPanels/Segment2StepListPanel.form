@@ -1,0 +1,169 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[190, 401]"/>
+    </Property>
+    <Property name="name" type="java.lang.String" value="Form" noResource="true"/>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[190, 401]"/>
+    </Property>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="v_step3Button" alignment="0" pref="180" max="32767" attributes="1"/>
+                      <Component id="v_step4Button" alignment="0" pref="180" max="32767" attributes="1"/>
+                      <Component id="v_step5Button" alignment="0" pref="180" max="32767" attributes="1"/>
+                      <Component id="v_step6Button" alignment="0" pref="180" max="32767" attributes="1"/>
+                      <Component id="v_step2Button" alignment="0" pref="180" max="32767" attributes="1"/>
+                      <Component id="v_step1Button" alignment="0" max="32767" attributes="1"/>
+                  </Group>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="v_step7Button" alignment="0" pref="180" max="32767" attributes="1"/>
+                      <Component id="v_step8Button" alignment="0" pref="180" max="32767" attributes="1"/>
+                      <Component id="v_step9Button" alignment="0" pref="180" max="32767" attributes="1"/>
+                  </Group>
+                  <Component id="v_step10Button" alignment="0" pref="180" max="32767" attributes="1"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Component id="v_step1Button" min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="v_step2Button" min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="v_step3Button" min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="v_step4Button" min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="v_step5Button" min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="v_step6Button" min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="v_step7Button" min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="v_step8Button" min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="v_step9Button" min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="v_step10Button" min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="v_step1Button">
+      <Properties>
+        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+          <action class="MainProgram.Walkthrough.UI.SegmentStepListPanels.Segment2StepListPanel" id="ShowStep1" methodName="ShowStep1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" resourceKey="v_step1Button.text"/>
+        <Property name="name" type="java.lang.String" value="v_step1Button" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="v_step2Button">
+      <Properties>
+        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+          <action class="MainProgram.Walkthrough.UI.SegmentStepListPanels.Segment2StepListPanel" id="ShowStep2" methodName="ShowStep2"/>
+        </Property>
+        <Property name="text" type="java.lang.String" resourceKey="v_step2Button.text"/>
+        <Property name="name" type="java.lang.String" value="v_step2Button" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="v_step3Button">
+      <Properties>
+        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+          <action class="MainProgram.Walkthrough.UI.SegmentStepListPanels.Segment2StepListPanel" id="ShowStep3" methodName="ShowStep3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" resourceKey="v_step3Button.text"/>
+        <Property name="name" type="java.lang.String" value="v_step3Button" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="v_step4Button">
+      <Properties>
+        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+          <action class="MainProgram.Walkthrough.UI.SegmentStepListPanels.Segment2StepListPanel" id="ShowStep4" methodName="ShowStep4"/>
+        </Property>
+        <Property name="text" type="java.lang.String" resourceKey="v_step4Button.text"/>
+        <Property name="name" type="java.lang.String" value="v_step4Button" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="v_step5Button">
+      <Properties>
+        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+          <action class="MainProgram.Walkthrough.UI.SegmentStepListPanels.Segment2StepListPanel" id="ShowStep5" methodName="ShowStep5"/>
+        </Property>
+        <Property name="text" type="java.lang.String" resourceKey="v_step5Button.text"/>
+        <Property name="name" type="java.lang.String" value="v_step5Button" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="v_step7Button">
+      <Properties>
+        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+          <action class="MainProgram.Walkthrough.UI.SegmentStepListPanels.Segment2StepListPanel" id="ShowStep7" methodName="ShowStep7"/>
+        </Property>
+        <Property name="text" type="java.lang.String" resourceKey="v_step7Button.text"/>
+        <Property name="name" type="java.lang.String" value="v_step7Button" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="v_step6Button">
+      <Properties>
+        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+          <action class="MainProgram.Walkthrough.UI.SegmentStepListPanels.Segment2StepListPanel" id="ShowStep6" methodName="ShowStep6"/>
+        </Property>
+        <Property name="text" type="java.lang.String" resourceKey="v_step6Button.text"/>
+        <Property name="name" type="java.lang.String" value="v_step6Button" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="v_step8Button">
+      <Properties>
+        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+          <action class="MainProgram.Walkthrough.UI.SegmentStepListPanels.Segment2StepListPanel" id="ShowStep8" methodName="ShowStep8"/>
+        </Property>
+        <Property name="text" type="java.lang.String" resourceKey="v_step8Button.text"/>
+        <Property name="name" type="java.lang.String" value="v_step8Button" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="v_step9Button">
+      <Properties>
+        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+          <action class="MainProgram.Walkthrough.UI.SegmentStepListPanels.Segment2StepListPanel" id="ShowStep9" methodName="ShowStep9"/>
+        </Property>
+        <Property name="text" type="java.lang.String" resourceKey="v_step9Button.text"/>
+        <Property name="name" type="java.lang.String" value="v_step9Button" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="v_step10Button">
+      <Properties>
+        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+          <action class="MainProgram.Walkthrough.UI.SegmentStepListPanels.Segment2StepListPanel" id="ShowStep10" methodName="ShowStep10"/>
+        </Property>
+        <Property name="text" type="java.lang.String" resourceKey="v_step10Button.text"/>
+        <Property name="name" type="java.lang.String" value="v_step10Button" noResource="true"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>

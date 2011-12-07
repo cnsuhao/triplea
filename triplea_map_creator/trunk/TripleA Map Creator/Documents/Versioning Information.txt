@@ -1,0 +1,13 @@
+Major.Minor.Point.Micro, this is the form of a version string, such as 2.1.5.3.
+
+Here's how I like to use versioning:
+
+    Bump Major, if the project has been completely recreated. If not this,
+
+    Bump Minor, if a significant new feature is added to the program, such as a sub-program(like map utilities app), a program lobby, code for TripleA map importing, etc. If not this,
+
+    Bump Point, if a change has been made that breaks existing saves/projects/game files. If not this,
+
+    Bump Micro, for any change at all.
+
+Hope this helps!

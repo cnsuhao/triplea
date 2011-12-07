@@ -1,0 +1,36 @@
+Walkthrough Steps:
+
+    Map Base:
+        1. Map Information
+        2. Map Base Image
+        3. Territory Definitions
+        4. Territory Polygons
+        5. Territory Connections
+        6. Unit Drawing Locations
+
+    Map Xml:
+        1. Map Presets
+        2. Players And Alliances
+        3. Player Order
+        4. Unit List
+        5. Technology List
+        6. Territory Information
+        7. Unit Placements
+        8. Map Canals
+        9. Map Options
+        10. Map Properties
+
+    Map Extra's:
+        1. Relief Images
+        2. Territory Overlays
+        3. Map Decorations
+        4. Map Skins
+
+    Map Finalization:
+        1. Map Testing
+        2. Map Notes
+
+    Map Release:
+        1. Export TripleA Map
+        2. Upload To Repository
+        3. Announce Your Map!

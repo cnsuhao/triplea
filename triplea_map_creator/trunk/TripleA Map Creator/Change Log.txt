@@ -1,0 +1,17 @@
+Changes for 2.0.0.1
+
+* Added description to java project/jar through Netbeans.
+
+* Increased default Max Java Heap Size setting to 750 megabytes.
+
+* Fixed issue where user is able to press "Next Step" when the project is loaded onto the last step.
+
+* Fixed issue where flag and unit image files do not have an extension and thus do not work.
+
+Changes for 2.0.0.0
+
+* Initial release. Program is usable, but not yet 'complete'.
+
+
+
+Note: Please add changelog messages in past tense, as if you were saying "Someone <message>"

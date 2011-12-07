@@ -1,0 +1,196 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="v_alignmentHelper1" pref="586" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="v_alignmentHelper2" min="-2" pref="290" max="-2" attributes="1"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="v_mapNotesScrollPane" alignment="0" pref="590" max="32767" attributes="0"/>
+                          <Component id="jPanel1" alignment="1" pref="590" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="v_insertHelperListScrollPane" min="-2" max="-2" attributes="1"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="v_alignmentHelper2" max="32767" attributes="1"/>
+                  <Component id="v_alignmentHelper1" alignment="0" max="32767" attributes="1"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="v_insertHelperListScrollPane" pref="473" max="32767" attributes="2"/>
+                  <Component id="v_mapNotesScrollPane" alignment="0" pref="473" max="32767" attributes="2"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="v_mapNotesScrollPane">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="v_mapNotesScrollPane" noResource="true"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="v_mapNotes">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+            <Property name="name" type="java.lang.String" value="v_mapNotes" noResource="true"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="v_alignmentHelper1">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="v_alignmentHelper1" noResource="true"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="jLabel1.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="jLabel1.text"/>
+            <Property name="name" type="java.lang.String" value="jLabel1" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="0" gridY="0" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JScrollPane" name="v_insertHelperListScrollPane">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="v_insertHelperListScrollPane" noResource="true"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JList" name="v_insertHelperList">
+          <Properties>
+            <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+              <StringArray count="26">
+                <StringItem index="0" value="Big Style (&lt;big&gt;Big Text&lt;/big&gt;)"/>
+                <StringItem index="1" value="Bold Style (&lt;b&gt;Bold Text&lt;/b&gt;)"/>
+                <StringItem index="2" value="Bullet (&lt;li&gt; First point...)"/>
+                <StringItem index="3" value="Center (&lt;center&gt;Centered text&lt;/center&gt;)"/>
+                <StringItem index="4" value="Comment (&lt;!--Comments here--&gt;)"/>
+                <StringItem index="5" value="Customized Body (&lt;body...&gt;Bgd color set&lt;/body&gt;)"/>
+                <StringItem index="6" value="Emphatic Style (&lt;em&gt;Emphasis here!&lt;/em&gt;)"/>
+                <StringItem index="7" value="Heading 1 (&lt;h1&gt;Largest&lt;/h1&gt;)"/>
+                <StringItem index="8" value="Heading 2 (&lt;h2&gt;Larger&lt;/h2&gt;)"/>
+                <StringItem index="9" value="Heading 3 (&lt;h3&gt;Large&lt;/h3&gt;)"/>
+                <StringItem index="10" value="Heading 4 (&lt;h4&gt;Small&lt;/h4&gt;)"/>
+                <StringItem index="11" value="Heading 5 (&lt;h5&gt;Smaller&lt;/h5&gt;)"/>
+                <StringItem index="12" value="Heading 6 (&lt;h6&gt;Smallest&lt;/h6&gt;)"/>
+                <StringItem index="13" value="Image (&lt;img.../&gt;)"/>
+                <StringItem index="14" value="Italic Style (&lt;i&gt;Italicized Text&lt;/i&gt;)"/>
+                <StringItem index="15" value="New Line Marker (&lt;br&gt;This is the next line)"/>
+                <StringItem index="16" value="Paragraph (&lt;p...&gt;I&apos;m anchored somewhere!&lt;/p&gt;)"/>
+                <StringItem index="17" value="Small Style (&lt;small&gt;Can you even read this?&lt;/small&gt;)"/>
+                <StringItem index="18" value="Strikethrough Style (&lt;s&gt;Depreciated&lt;/s&gt;)"/>
+                <StringItem index="19" value="Strong Style (&lt;strong&gt;IMPORTANT:&lt;/strong&gt;)"/>
+                <StringItem index="20" value="Style Set - Line (&lt;font...&gt;&lt;/font&gt;)"/>
+                <StringItem index="21" value="Style Set - Block (&lt;span...&gt;&lt;/span&gt;)"/>
+                <StringItem index="22" value="Style Set - Remainder (&lt;div...&gt;)"/>
+                <StringItem index="23" value="Table  (&lt;table...&gt;...&lt;/table)"/>
+                <StringItem index="24" value="Teletype Style (&lt;tt&gt;Good for code snippet&apos;s&lt;/tt&gt;)"/>
+                <StringItem index="25" value="Underline Style (&lt;u&gt;Book Title&lt;/u&gt;)"/>
+              </StringArray>
+            </Property>
+            <Property name="selectionMode" type="int" value="0"/>
+            <Property name="name" type="java.lang.String" value="v_insertHelperList" noResource="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="v_insertHelperListMouseClicked"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="v_alignmentHelper2">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="v_alignmentHelper2" noResource="true"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="jLabel2.text"/>
+            <Property name="name" type="java.lang.String" value="jLabel2" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="0" gridY="0" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="jPanel1" noResource="true"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="v_preview">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="v_preview.text"/>
+            <Property name="name" type="java.lang.String" value="v_preview" noResource="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="v_previewActionPerformed"/>
+          </Events>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="-1" gridY="-1" gridWidth="1" gridHeight="1" fill="0" ipadX="45" ipadY="5" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

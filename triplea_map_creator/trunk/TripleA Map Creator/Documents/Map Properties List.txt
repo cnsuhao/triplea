@@ -1,0 +1,95 @@
+neutralCharge, maxFactoriesPerTerritory, Always on AA, Produce fighters on carriers, LHTR Carrier production rules,
+Two hit battleship, 4th Edition, Partial Amphibious Retreat, Total Victory, Honorable Surrender, Projection of Power,
+All Rockets Attack, Neutrals Are Impassable, Rockets Can Violate Neutrality, Rockets Can Fly Over Impassables, Pacific Edition,
+Anniversary Edition, No Economic Victory, Anniversary Edition Land Production, Anniversary Edition Air Naval,
+Placement Restricted By Factory, Selectable Tech Roll, AA50 Tech Model, Tech Development, Transport Restricted Unload,
+Random AA Casualties, Roll AA Individually, Limit SBR Damage To Factory Production, Limit SBR Damage To Factory Production,
+Limit SBR Damage Per Turn, Limit Rocket Damage Per Turn, Territory Turn Limit, SBR Victory Points, Rocket Attack Per Factory Restricted,
+Allied Air Dependents, Defending Subs Sneak Attack, Attacker Retreat Planes, Surviving Air Move To Land, Naval Bombard Casualties Return Fire Restricted,
+Blitz Through Factories And AA Restricted, Unit Placement In Enemy Seas, Sub Control Sea Zone Restricted, Transport Control Sea Zone,
+Production Per X Territories Restricted, Production Per Valued Territory Restricted, Place in Any Territory, Unit Placement Per Territory Restricted,
+Movement By Territory Restricted, Transport Casualties Restricted, Ignore Transport In Movement, Ignore Sub In Movement, Hari-Kari Units,
+Occupied Territories, Unplaced units live when not placed, Air Attack Sub Restricted, Sub Retreat Before Battle, Sub Retreat DD Restricted,
+Shore Bombard Per Ground Unit Restricted, SBR Affects Unit Production, AA Territory Restricted, National Objectives, Continuous Research
+
+
+
+By Subject:
+
+General:
+    4th Edition
+    Pacific Edition
+    Anniversary Edition
+
+Production:
+    LHTR Carrier production rules
+    Anniversary Edition Land Production
+    Anniversary Edition Air Naval
+    SBR Affects Unit Production
+
+Technology:
+    Selectable Tech Roll
+    AA50 Tech Model
+    Tech Development
+    Continuous Research
+
+Battles:
+    neutralCharge
+    Two hit battleship
+    Partial Amphibious Retreat
+    All Rockets Attack
+    Random AA Casualties
+    Roll AA Individually
+    SBR Victory Points
+    Allied Air Dependents
+    Defending Subs Sneak Attack
+    Attacker Retreat Planes
+    Surviving Air Move To Land
+    Sub Retreat Before Battle
+
+Victories:
+    Total Victory
+    Honorable Surrender
+    Projection of Power
+    No Economic Victory
+
+Limits:
+    Limit SBR Damage To Factory Production
+    Limit SBR Damage Per Turn
+    Limit Rocket Damage Per Turn
+    Territory Turn Limit
+
+Restrictions:
+    maxFactoriesPerTerritory
+    Neutrals Are Impassable
+    Rockets Can Violate Neutrality
+    Rockets Can Fly Over Impassables
+    Placement Restricted By Factory
+    Transport Restricted Unload
+    Rocket Attack Per Factory Restricted
+    Naval Bombard Casualties Return Fire Restricted
+    Blitz Through Factories And AA Restricted
+    Unit Placement In Enemy Seas
+    Sub Control Sea Zone Restricted
+    Production Per X Territories Restricted
+    Production Per Valued Territory Restricted
+    Place in Any Territory
+    Unit Placement Per Territory Restricted
+    Movement By Territory Restricted
+    Transport Casualties Restricted
+    Air Attack Sub Restricted
+    Sub Retreat DD Restricted
+    Shore Bombard Per Ground Unit Restricted
+    AA Territory Restricted
+
+Miscellaneous:
+    Always on AA
+    Transport Control Sea Zone
+    Ignore Transport In Movement
+    Ignore Sub In Movement
+    Hari-Kari Units
+    Unplaced units live when not placed
+    National Objectives
+
+Special:
+    Occupied Territories

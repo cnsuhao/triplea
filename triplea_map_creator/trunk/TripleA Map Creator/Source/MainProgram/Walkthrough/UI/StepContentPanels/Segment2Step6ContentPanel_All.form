@@ -1,0 +1,392 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="v_landWaterGroup">
+    </Component>
+  </NonVisualComponents>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="v_scrollPane" alignment="0" pref="882" max="32767" attributes="0"/>
+          <Component id="v_toolbarPanel" alignment="0" pref="882" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <Component id="v_scrollPane" pref="462" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="v_toolbarPanel" min="-2" pref="75" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="v_scrollPane">
+      <Properties>
+        <Property name="autoscrolls" type="boolean" value="true"/>
+        <Property name="name" type="java.lang.String" value="v_scrollPane" noResource="true"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="v_scrollPanePanel">
+          <Properties>
+            <Property name="autoscrolls" type="boolean" value="true"/>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[0, 0]"/>
+            </Property>
+            <Property name="name" type="java.lang.String" value="v_scrollPanePanel" noResource="true"/>
+          </Properties>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="false"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="v_drawingLabel">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="v_drawingLabel" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="v_drawingLabeldrawingMouseDown"/>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="v_drawingLabeldrawingMouseReleased"/>
+                <EventHandler event="mouseDragged" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="v_drawingLabeldrawingMouseDragged"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JLabel()&#xa;{&#xa;    public void paint(Graphics graphics)&#xa;    {&#xa;        Graphics2D g = (Graphics2D)graphics;&#xa;        //super.paint(g);&#xa;        g.drawImage(m_image, 0,0, this);&#xa;        g.setFont(Constants.MapFont);&#xa;        for (Entry&lt;String, List&lt;Polygon&gt;&gt; entry : GetMapData().GetTPolygons().entrySet())&#xa;        {&#xa;            String territory = entry.getKey();&#xa;            TerritoryData tData = TrimTData(m_data.get(territory));&#xa;            if (tData == null)&#xa;                continue;&#xa;            &#xa;            List&lt;Polygon&gt; polygons = entry.getValue();&#xa;            Color pColor = null;       &#xa;            if(tData.GetOwner() != null &amp;&amp; GetMapData().GetPlayersData().containsKey(tData.GetOwner()))&#xa;                pColor = GetMapData().GetPlayersData().get(tData.GetOwner()).GetColor();&#xa;&#xa;            if(pColor != null)&#xa;                g.setColor(new Color(pColor.getRed(), pColor.getGreen(), pColor.getBlue(), m_ownerColorTransparency));&#xa;            else&#xa;                g.setColor(new Color(0,0,0,0)); //Transparent, for water and unowned ters&#xa;            &#xa;            if(territory.equals(m_currentTer))&#xa;                g.setColor(Color.red); //We always color the selected ter red&#xa;            &#xa;            for (Polygon item : polygons)&#xa;                g.fillPolygon(item.xpoints, item.ypoints, item.npoints);&#xa;        }&#xa;        g.setColor(Color.black);        &#xa;        for(String ter : GetMapData().GetTDefinitions().keySet())&#xa;        {&#xa;            Point center = GetMapData().GetTDefinitions().get(ter);&#xa;            if (m_displayInfoOnscreen)&#xa;            {&#xa;                TerritoryData tData = TrimTData(m_data.get(ter));&#xa;                if (tData == null)&#xa;                    continue;&#xa;                int fontHeight = (int)g.getFont().getStringBounds(ter, g.getFontRenderContext()).getHeight();&#xa;                &#xa;                String s1 = &quot;+&quot; + Integer.toString(tData.GetProduction()) + &quot; &quot; + (!tData.IsWater() ? &quot;Land&quot; : &quot;Water&quot;) + &quot; owned by &quot; + tData.GetOwner();&#xa;                g.drawString(s1, center.x + 10, center.y + 5 + fontHeight);&#xa;                String s2 = (tData.IsImpassable() ? &quot;Impassable, &quot; : &quot;&quot;) + (tData.IsVictoryCity() ? &quot;VC, &quot; : &quot;&quot;) + (tData.IsBlockadeZone() ? &quot;Blockade Zone, &quot; : &quot;&quot;) + (tData.GetCapitalTo() != null ? &quot;Capital To: &quot; + tData.GetCapitalTo() + &quot;, &quot;: &quot;&quot;);&#xa;                s2 = s2.substring(0, Math.max(s2.length() - 2, 0));&#xa;                g.drawString(s2, center.x + 10, center.y + 5 + fontHeight + fontHeight);&#xa;            }&#xa;        }&#xa;        g.setFont(Constants.MapFont_Bold);&#xa;        for(String ter : GetMapData().GetTDefinitions().keySet())&#xa;        {&#xa;            Point center = GetMapData().GetTDefinitions().get(ter);&#xa;            g.drawString(ter, center.x + 10, center.y + 5);&#xa;        }&#xa;        g.setColor(Color.black);&#xa;        for(Point p : GetMapData().GetTDefinitions().values())&#xa;        {&#xa;            g.fillOval(p.x - 5, p.y - 5, 10, 10);&#xa;        }&#xa;        g.setColor(Constants.SafeGreenColor);&#xa;        for(Point p : GetMapData().GetTDefinitions().values())&#xa;        {&#xa;            g.fillOval(p.x - 3, p.y - 3, 6, 6);&#xa;        }&#xa;    }&#xa;}"/>
+                <AuxValue name="generateMnemonicsCode" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="0" y="0" width="800" height="400"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="v_toolbarPanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+            <BevelBorder/>
+          </Border>
+        </Property>
+        <Property name="name" type="java.lang.String" value="v_toolbarPanel" noResource="true"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[725, 62]"/>
+        </Property>
+        <Property name="requestFocusEnabled" type="boolean" value="false"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="false"/>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="v_clearScreenButton">
+          <Properties>
+            <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+              <action class="MainProgram.Walkthrough.UI.StepContentPanels.Segment2Step6ContentPanel_All" id="ClearScreen" methodName="ClearScreen"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" resourceKey="v_terProduction.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="v_clearScreenButton.text"/>
+            <Property name="toolTipText" type="java.lang.String" resourceKey="v_clearScreenButton.toolTipText"/>
+            <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+              <Insets value="[0, 0, 0, 0]"/>
+            </Property>
+            <Property name="name" type="java.lang.String" value="v_clearScreenButton" noResource="true"/>
+            <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="v_displayInfoOnscreen"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="3" y="3" width="69" height="69"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="v_displayInfoOnscreen">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="v_terProduction.font"/>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" resourceKey="v_displayInfoOnscreen.text"/>
+            <Property name="toolTipText" type="java.lang.String" resourceKey="v_displayInfoOnscreen.toolTipText"/>
+            <Property name="name" type="java.lang.String" value="v_displayInfoOnscreen" noResource="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="v_displayInfoOnscreenStateChanged"/>
+          </Events>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="77" y="10" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Container class="javax.swing.JPanel" name="jPanel2">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                <EtchetBorder/>
+              </Border>
+            </Property>
+            <Property name="name" type="java.lang.String" value="jPanel2" noResource="true"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[4, 68]"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="285" y="0" width="4" height="74"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="70" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+        </Container>
+        <Container class="javax.swing.JPanel" name="v_territoryDataPanel">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="v_territoryDataPanel" noResource="true"/>
+            <Property name="opaque" type="boolean" value="false"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="290" y="0" width="590" height="73"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="v_terOwnerCM" min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="v_terCapitalToCB" min="-2" pref="87" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="v_terProduction" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="v_terIsLand" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="v_terIsWater" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="v_terIsImpassable" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="v_terIsVictoryCity" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="v_terIsBlockadeZone" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="170" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="v_terIsLand" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="v_terIsWater" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="v_terIsImpassable" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="v_terIsVictoryCity" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="v_terIsBlockadeZone" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="v_terOwnerCM" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="v_terCapitalToCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="v_terProduction" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="font" type="java.awt.Font" resourceKey="v_terProduction.font"/>
+                <Property name="text" type="java.lang.String" resourceKey="jLabel2.text"/>
+                <Property name="name" type="java.lang.String" value="jLabel2" noResource="true"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="v_terOwnerCM">
+              <Properties>
+                <Property name="font" type="java.awt.Font" resourceKey="v_terProduction.font"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="Item 1"/>
+                    <StringItem index="1" value="Item 2"/>
+                    <StringItem index="2" value="Item 3"/>
+                    <StringItem index="3" value="Item 4"/>
+                  </StringArray>
+                </Property>
+                <Property name="name" type="java.lang.String" value="v_terOwnerCM" noResource="true"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="v_terIsImpassable">
+              <Properties>
+                <Property name="font" type="java.awt.Font" resourceKey="v_terProduction.font"/>
+                <Property name="text" type="java.lang.String" resourceKey="v_terIsImpassable.text"/>
+                <Property name="name" type="java.lang.String" value="v_terIsImpassable" noResource="true"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="v_terIsVictoryCity">
+              <Properties>
+                <Property name="font" type="java.awt.Font" resourceKey="v_terProduction.font"/>
+                <Property name="text" type="java.lang.String" resourceKey="v_terIsVictoryCity.text"/>
+                <Property name="name" type="java.lang.String" value="v_terIsVictoryCity" noResource="true"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel5">
+              <Properties>
+                <Property name="font" type="java.awt.Font" resourceKey="v_terProduction.font"/>
+                <Property name="text" type="java.lang.String" resourceKey="jLabel5.text"/>
+                <Property name="name" type="java.lang.String" value="jLabel5" noResource="true"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="v_terCapitalToCB">
+              <Properties>
+                <Property name="font" type="java.awt.Font" resourceKey="v_terProduction.font"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="Item 1"/>
+                    <StringItem index="1" value="Item 2"/>
+                    <StringItem index="2" value="Item 3"/>
+                    <StringItem index="3" value="Item 4"/>
+                  </StringArray>
+                </Property>
+                <Property name="name" type="java.lang.String" value="v_terCapitalToCB" noResource="true"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel6">
+              <Properties>
+                <Property name="font" type="java.awt.Font" resourceKey="v_terProduction.font"/>
+                <Property name="text" type="java.lang.String" resourceKey="jLabel6.text"/>
+                <Property name="name" type="java.lang.String" value="jLabel6" noResource="true"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSpinner" name="v_terProduction">
+              <Properties>
+                <Property name="font" type="java.awt.Font" resourceKey="v_terProduction.font"/>
+                <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                  <SpinnerModel initial="0" maximum="1000" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                </Property>
+                <Property name="name" type="java.lang.String" value="v_terProduction" noResource="true"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="v_terIsBlockadeZone">
+              <Properties>
+                <Property name="font" type="java.awt.Font" resourceKey="v_terProduction.font"/>
+                <Property name="text" type="java.lang.String" resourceKey="v_terIsBlockadeZone.text"/>
+                <Property name="enabled" type="boolean" value="false"/>
+                <Property name="name" type="java.lang.String" value="v_terIsBlockadeZone" noResource="true"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="v_terIsLand">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="v_landWaterGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" resourceKey="v_terProduction.font"/>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" resourceKey="v_terIsLand.text"/>
+                <Property name="name" type="java.lang.String" value="v_terIsLand" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="v_terIsLandStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="v_terIsWater">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="v_landWaterGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" resourceKey="v_terProduction.font"/>
+                <Property name="text" type="java.lang.String" resourceKey="v_terIsWater.text"/>
+                <Property name="name" type="java.lang.String" value="v_terIsWater" noResource="true"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="v_terProduction.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="jLabel1.text"/>
+            <Property name="toolTipText" type="java.lang.String" resourceKey="jLabel1.toolTipText"/>
+            <Property name="name" type="java.lang.String" value="jLabel1" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="80" y="33" width="-1" height="20"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="v_ownerColorTransparency">
+          <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="v_terProduction.font"/>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="0%"/>
+                <StringItem index="1" value="50%"/>
+                <StringItem index="2" value="75%"/>
+                <StringItem index="3" value="100%"/>
+              </StringArray>
+            </Property>
+            <Property name="selectedItem" type="java.lang.Object" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;100%&quot;" type="code"/>
+            </Property>
+            <Property name="name" type="java.lang.String" value="v_ownerColorTransparency" noResource="true"/>
+            <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="v_terIsLand"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="v_ownerColorTransparencyActionPerformed"/>
+          </Events>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="200" y="33" width="70" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
