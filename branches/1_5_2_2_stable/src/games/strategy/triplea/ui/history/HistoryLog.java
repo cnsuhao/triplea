@@ -167,7 +167,7 @@ public class HistoryLog extends JFrame
 					final Object details = ((Renderable) node).getRenderingData();
 					// flush move list
 					// support conquering territory on combat move
-					if (moving && !(details instanceof MoveDescription || title.matches("\\w+ takes? .*? from \\w+")))
+					/*if (moving && !(details instanceof MoveDescription || title.matches("\\w+ takes? .*? from \\w+")))
 					{
 						final Iterator<String> moveIter = moveList.iterator();
 						while (moveIter.hasNext())
@@ -176,7 +176,7 @@ public class HistoryLog extends JFrame
 							moveIter.remove();
 						}
 						moving = false;
-					}
+					}*/
 					if (details instanceof DiceRoll)
 					{
 						if (!verbose)
