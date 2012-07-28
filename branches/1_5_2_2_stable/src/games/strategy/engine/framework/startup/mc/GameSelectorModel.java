@@ -60,6 +60,8 @@ public class GameSelectorModel extends Observable
 	
 	public void load(final NewGameChooserEntry entry)
 	{
+		if (GameRunner.areWeOldExtraJar())
+			return;
 		m_fileName = entry.getLocation();
 		setGameData(entry.getGameData());
 		final Preferences prefs = Preferences.userNodeForPackage(this.getClass());
@@ -101,8 +103,11 @@ public class GameSelectorModel extends Observable
 			{
 				newData = manager.loadGame(file);
 			}
+			if (newData != null)
+			{
 			m_fileName = file.getName();
 			setGameData(newData);
+			}
 		} catch (final EngineVersionException e)
 		{
 			System.out.println(e.getMessage());
