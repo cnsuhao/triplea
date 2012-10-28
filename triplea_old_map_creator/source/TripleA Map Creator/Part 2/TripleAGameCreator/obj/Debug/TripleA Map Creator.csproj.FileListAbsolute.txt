@@ -1,0 +1,19 @@
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\bin\Debug\TripleA Map Creator.exe.config
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\bin\Debug\TripleA Map Creator.exe.manifest
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\bin\Debug\TripleA Map Creator.application
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\bin\Debug\TripleA Map Creator.exe
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\bin\Debug\TripleA Map Creator.pdb
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\obj\Debug\TripleAGameCreator.AboutBox1.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\obj\Debug\TripleAGameCreator.Automatic_Connection_Finder.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\obj\Debug\TripleAGameCreator.ExceptionViewer.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\obj\Debug\TripleAGameCreator.Form1.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\obj\Debug\TripleAGameCreator.Properties.Resources.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\obj\Debug\TripleAGameCreator.StringRetriever.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\obj\Debug\TripleAGameCreator.UnitAddingWindow.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\obj\Debug\TripleA Map Creator.csproj.GenerateResource.Cache
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\obj\Debug\TripleA Map Creator.TrustInfo.xml
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\obj\Debug\TripleA Map Creator.exe.manifest
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\obj\Debug\TripleA Map Creator.application
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\obj\Debug\TripleA Map Creator.exe
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Creator\Part 2\TripleAGameCreator\obj\Debug\TripleA Map Creator.pdb

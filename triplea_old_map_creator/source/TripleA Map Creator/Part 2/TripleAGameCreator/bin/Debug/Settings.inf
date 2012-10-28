@@ -1,0 +1,3 @@
+Display Current Units When Entering New Units="true"
+Stop Loading XML File When Error Is Found="false"
+Java Heap Size="1000"
