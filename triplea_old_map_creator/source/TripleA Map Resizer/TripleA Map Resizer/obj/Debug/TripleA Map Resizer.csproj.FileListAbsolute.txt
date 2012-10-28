@@ -1,0 +1,19 @@
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Resizer (Use Web Project)\Current\TripleA Map Resizer\bin\Debug\TripleA Map Resizer.exe.config
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Resizer (Use Web Project)\Current\TripleA Map Resizer\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Resizer (Use Web Project)\Current\TripleA Map Resizer\obj\Debug\TripleA_Map_Resizer.Properties.Resources.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Resizer (Use Web Project)\Current\TripleA Map Resizer\obj\Debug\TripleA Map Resizer.csproj.GenerateResource.Cache
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Resizer (Use Web Project)\Current\TripleA Map Resizer\bin\Debug\TripleA Map Resizer.exe
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Resizer (Use Web Project)\Current\TripleA Map Resizer\bin\Debug\TripleA Map Resizer.pdb
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Resizer (Use Web Project)\Current\TripleA Map Resizer\obj\Debug\TripleA Map Resizer.exe
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Resizer (Use Web Project)\Current\TripleA Map Resizer\obj\Debug\TripleA Map Resizer.pdb
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Resizer\TripleA Map Resizer\bin\Debug\TripleA Map Resizer.exe.config
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Resizer\TripleA Map Resizer\obj\Debug\TripleA Map Resizer.exe
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Resizer\TripleA Map Resizer\obj\Debug\TripleA Map Resizer.pdb
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Resizer\TripleA Map Resizer\bin\Debug\TripleA Map Resizer.exe
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Resizer\TripleA Map Resizer\bin\Debug\TripleA Map Resizer.pdb
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Resizer\TripleA Map Resizer\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Resizer\TripleA Map Resizer\obj\Debug\TripleA_Map_Resizer.Properties.Resources.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Resizer\TripleA Map Resizer\obj\Debug\TripleA Map Resizer.csproj.GenerateResource.Cache
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Resizer\TripleA Map Resizer\obj\Debug\TripleA_Map_Resizer.Main.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Resizer\TripleA Map Resizer\obj\Debug\TripleA_Map_Resizer.MapPreviewWindow.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Resizer\TripleA Map Resizer\obj\Debug\TripleA_Map_Resizer.ExceptionViewer.resources

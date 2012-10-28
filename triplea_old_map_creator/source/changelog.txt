@@ -1,0 +1,399 @@
+Changes for 1.0.1.5
+
+* Fix some of the problems with map canals. (SDW)
+
+* Fix problem with Territory Connection Scanner not working completely with island setting on maps with lines thicker than 1 pixel. (SDW)
+
+* Update the program instructions for player flags. (SDW)
+
+* Remove "Random AA Casualties" from the auto-fill list of game settings. (SDW)
+
+* Fix problem where the map resource name is ruined when the user re-opens the map. (SDW)
+
+Changes for 1.0.1.4
+
+* Update the autofill information to match the v3 rules. (SDW)
+
+* Make it so that the unit adding window remembers its size after being closed and keeps that size the next time it's opened. (SDW)
+
+* Fix problem where the combo-box selections for an auto-entered technology are incorrect. (SDW)
+
+* Update the exception viewers to display the base exception stack trace first and then the complete exception stack trace. (SDW)
+
+* Update the step title labels in part 2 so that the text is centered even when the window is resized. (SDW)
+
+* Update the territory connection panel in Part 2 to show the total connection count. (SDW)
+
+* Add an option to the connection scanner called "Perform Island Searching" that allows the program to search for island connections. (SDW)
+
+* Rename the "Automatic Connection Finder" to the "Territory Connection Scanner". (SDW)
+
+* Fix problem where territory labels 'slide' away after changing text. (SDW)
+
+* Fix errors that occur in Part 2 when the user tries to set the value of a number field to something higher than the maximum Int32 number. (SDW)
+
+* Update the title text of the unit adding window to be "Changing " + [territory name] + "'s Units". (SDW)
+
+* Fix problem with the unit adding window where the result text will begin with "," if the first unit was added using a NumUpDown. (SDW)
+
+* Fix error that sometimes occurs when the form is trying to resize when the window is first opened. (SDW)
+
+* Update Part 1 to use "\" instead of "/" or "//" throughout the entire program. (Except one necessary part) (SDW)
+
+* Add more information to Part 1 for the Center Picker that tells the users to make any sea zones that contain islands end with "Sea Zone". (SDW)
+
+* Make it so that the program waits for the relief image breaker process to finish before allowing the user to proceed to the next step. (Unless the user decides to override the warning) (SDW)
+
+* Make it so that Part 1 allows map utility run windows to remain open if the user holds control while pressing the button to run the map utility. (SDW)
+
+* Fix problem where Part 1 does not save the player colors for the map properties. (SDW)
+
+Changes for 1.0.1.3
+
+* Fix problem where Part 2 will not finish saving a map if there is an error saving the canals. (SDW)
+
+* Fix problem where Part 2 will think that the user loaded a map even if they canceled the loading. (SDW)
+
+* Fix error that occurs in Part 1 when the user tries to move away from the 'Relief Tiles' step and the relief tiles folder doesn't exist. (SDW)
+
+* Update the map utilities instruction in Part 1. (SDW)
+ 
+* Update the in-program help in Part 2. (SDW)
+
+* Update the readme, map creation guide, and mod creation guide files. (SDW)
+
+* Rename the 'In-Game Settings' step to 'Game Settings'. (SDW)
+
+* Make it so that Part 2 disables the Back or Next buttons when at the first or last step. (SDW)
+
+* Make it so that the Game Settings step in Part 2 does not enable the Min. N. and Max. N. textboxes unless the Value textbox is a number. (SDW)  
+
+* Fix error that occurs when the user tries to load the centers for some maps such as the 'big_world' map in TripleA 1.0.0.3. (SDW)
+
+* Fix problem where many of the file open dialogs in Part 2 are not displayed over the main window. (SDW)
+
+* Fix problem where the Automatic Connection Finder will not set the window up for another scan when an error occurs. (SDW)
+
+* Fix error that occurs when the Automatic Connection Finder encounters an empty line. (SDW)
+
+* Update the color for canal land territories so that it is a different color than victory cities are shown as. (SDW)
+
+* Make sure that Part 2 uses lower case for all program-added units, etc.
+
+* Fix some window handle problems with the unit adding window. (SDW)
+
+* Fix multiple problems with the unit placements in Part 2. (SDW)
+
+* Fix problem where some of the combo-box's are not created with the correct choices shown. (SDW)
+
+* Fix problem where Part 2 will not save the production frontiers for the countries correctly. (SDW)
+
+* Fix error that occurs in Part 2 when the user removes all the units from a production frontier and then tries to add a unit. (SDW)
+
+* Make it so that the program draws the connection lines using anti-aliasing. (SDW)
+
+* Fix the double-buffered graphics. (SDW)
+
+* Fix error that occurs when the user tries to add a connection that already exists. (SDW)
+
+* Make it so that the initial size for Part 2 is the current Minimum Size and update all the controls in it to reflect the size change. (SDW)
+
+* Add a menu-strip to Part 2 containing a file menu, a navigate menu, an Information menu, and a help menu. (SDW)
+
+* Fix problem where html notes are not saved correctly. (SDW)
+
+* Fix problem where Part 2 sets the incorrect color for neutral land territories. (SDW)
+
+* Make it so that Part 2 uses an XML Reader instead of reading the text directly. (SDW)
+
+* Fix problem where the exception viewer doesn't always show the base exception when an error occurs. (SDW)
+
+* Change the extension of the settings file to .txt and update the programs to find it and write to it using the new extension. (SDW)
+
+* Fix problem where Part 2 will stop the running of the step set-up code instead of the step data applying code and vice-versa. (SDW)
+
+* Fix problem where Part 1 will remove the contents of the place file for the map being used when the user clicks the "Run Auto-Placement-Finder" button. (SDW)
+
+* Fix problem where Part 2 will not load any game settings that are not all on one line. (SDW)
+
+* Fix problem where Part 2 will save xml files incorrectly when some of the player sequences max run amount are set to 0. (SDW)
+
+* Fix error that occurs when the user tries to load a map that contains a space between the attribute name and the " in xml nodes. (SDW)
+
+* Fix error that occurs when the map creator tries to load a map with industrial technology production rules. (SDW)
+
+* Fix problem where the map loading method sometimes shows the incorrect error location to the user. (SDW)
+
+* Make it so that the ownership colors are picked from a larger number of colors. (SDW)
+
+* Make it so that the Unit Placements and Territory Productions steps in Part 2 use the same colors as in the Territory Ownership step. (SDW)
+
+* Fix problem where the program will still change a territory's units even when the user presses cancel when asked for the unit's owner. (SDW)
+
+* Fix problem where the TripleA Map Resizer And Shifter will crash unnecessarily if some of the 'required' files and folders are missing. (SDW)
+
+* Make it so that the TripleA Map Resizer And Shifter allows users to leave some of the required files and folders blank and still shift or resize the map by asking if the user wants the program to proceed anyway. (SDW)
+
+* Fix problem where users are able to change the tab page when the Map Resizer And Shifter is shifting or resizing a map. (SDW)
+
+* Make it so that the TripleA Map Resizer And Shifter displays the percent done with processing the map when the polygons file or the centers file is being processed. (SDW)
+
+* Use GC collecting with repetitive code in the TripleA Map Resizer And Shifter. (SDW)
+
+* Add a note that tells users in Part 1 which players and units are added to the TripleA images folder initially. (SDW)
+
+* Fix problem where Part 2 loads all the game sequences including the initDelegate and the endRound delegate which are not supposed to be loaded into the program. (SDW)
+
+* Fix problem where Part 2 will auto-fill the player sequences by naming the bid placement phases as the country name plus "PlaceBid" instead of the country name plus "BidPlace". (SDW)
+
+* Fix problem where the program will auto-fill incorrectly in the player delegates step by not placing all the bid sequences at the start. (SDW)
+
+* Make it so that it is obvious that the map properties do not have to be entered in Part 1 unless it doesn't exist yet. (SDW)
+
+* Fix incorrect message that is displayed when the user doesn't supply all the information in the Map Properties step in Part 1. (SDW)
+
+* Fix problem where the color choosers in Part 1 will return the selected color as the color name instead of the HTML six-digit color number. (SDW)
+
+* Make it so that Part 1 disables the back and next buttons when there are none before or after a step. (SDW)
+
+* Fix some threading problems with the TripleA Map Resizer And Shifter. (SDW)
+
+* Make the Unit Adding Window use layout suspending and resuming while adding unit panels. (SDW)
+
+* Update the readme.txt file to mention the map shifting feature. (SDW)
+
+* Update the Map Creation Guide to include information about the unit adding window and how to use it. (SDW)
+
+* Update the in-program help in Part 2 to include information about the unit adding window and how to use it. (SDW)
+
+Changes for 1.0.1.2
+
+* Fix problem where the Unit Placements step will add all the territory units without first removing them which causes units to be added more than once. (SDW)
+
+* Make it so the labels in the Unit Placements step show how many units are in the territory. (SDW)
+
+* Add a unit adding window that lets users easily add and remove units from a territory. (SDW)
+
+* Fix problem where Part 1 will not get the correct default max java heap size when the settings file is missing. (SDW)
+
+* Remove the useless "Display Current Units When Entering New Units" setting. (SDW)
+
+* Fix problem where Part 2 will not load the centers file for a map correctly when some of the territory names are numbers and some of the locations are thought to be the beggining of a territory's center location or when multiple centers are found on one line. (SDW)
+
+* Fix big error where if the user loads a map, and then loads another one, some of the values from the first map where kept and added into the second maps information. (SDW)
+ 
+* Fix some problems with the Map Resizer And Shifter. (SDW)
+
+* Add the Map Shifting feature to the Map Resizer utility, and rename the TripleA Map Resizer to TripleA Map Resizer And Shifter. (SDW)
+
+* Make it so that Part 1 starts the map utilities with no more than 10MB less than the memory available. (SDW)
+
+* Fix error that occurs in the Map Resizer Exception Viewer when an error that occured while resizing a map is being viewed and the user presses the "Copy Exception Information Into Clipboard" button. (SDW)
+
+* Fix error where the user is allowed to remove all the unit attachments from a unit. (SDW)
+
+* Fix error where the program will ask for the owner of sea units, even if the user presses cancel when asked to enter the units. (SDW)
+
+* Fix error where the program will remove the units from a territory when the user presses cancel when asked to enter the units. (SDW)
+
+Changes for 1.0.1.1
+
+* Add the "Available Choices" button to the Gameplay Sequences, Technologies, Unit Attachments, and Game Settings steps which displays all the available choices. (SDW)
+
+* Make it so Part 2 allows users to start a new map or mod without having access to the image file. (SDW)
+
+* Fix problem where if a map's polygons file contains a territory that isn't added in the 'Territory Definitions' step, the Automatic Connection Finder will stop working. (SDW)
+
+* Make it so the map utilites do "Garbage Collection" when starting and when closing. (SDW)
+
+* Increased the maximum Java heap size to 5GB. (SDW)
+
+* Make it so the file selection dialog in Part 1 uses a filter to remove confusion as to what file to select. (SDW)
+
+* Add the checking for updates feature to all the map utilites. (SDW)
+
+* Improve the way the program checks for updates. (SDW)
+
+* Add the Exception Viewer feature. (SDW)
+
+* Fix error where Part 2 will not display canals correctly when they are loaded from a saved xml file. (SDW)
+
+* Rename some methods and objects to make the code more readable and understandable by other programmers. (SDW)
+
+* Make it so each Map Creator window shows the Map Creator icon in the top-left. (SDW)
+
+* Update the program icon. (SDW)
+
+* Add the TripleA Map Resizer program to the TripleA package. (SDW)
+
+Changes for 1.0.1.0
+
+* Improved the way users create canals in Part 2. (SDW)
+
+* Fix problem where the user cannot add unit attachments to a new unit added to an already created map. (SDW)
+
+* Fix error where tab pages that are used for testing purposes are not being removed when the user starts making a new game. (SDW)
+
+* Move the loading method back into the main thread which allows the user to load maps more quickly and fixes the problem where the user cannot load a map, then load another map in the same program session. (SDW)
+
+* Rename some methods and objects to make the code more readable and understandable by other programmers. (SDW)
+
+* Fix big error where the user cannot advance to the next step in Part 2 if they're starting a new game. (SDW)
+
+* Increase the speed of the Automatic Connection Finder by having it store the polygon bounds when they're calculated so they don't have to be re-calculated later. (SDW)
+
+
+Changes for 1.0.0.9
+
+* Improve the Automatic Connection Finder by adding three more useful features. (SDW)
+
+* Add the 'Increase Accuracy By Adding Points(Slow)' checkbox to the Automatic Connection Finder window that helps the program find sea zone connections more easily. (SDW)
+
+* Fix error where the Automatic Connection Finder will replace all connections with found connections even when the user has canceled the Automatic Connection Finder. (SDW)
+
+* Add better error catching code when loading a map in Part 2. (SDW)
+
+* Increase the speed of the Automatic Connection Finder. (SDW)
+
+* Fix reintroduced problem from 1.0.0.8 that doesn't let the program load xml files that have xml "nodes?" spread over multiple lines. (SDW)
+
+* Make it so the the users only have to specify the location of the 'triplea.jar' file once when running the utilities in Part 1. (SDW)
+
+* Fix small error where the String Retriever window will not focus on the Combo-Box the first time it is opened. (SDW)
+
+* Fix big error where the program will crash if the user tries to load an xml file from a folder without the map data and without being in a TripleA folder. (SDW)
+
+* Fix error where the program would add another 'Tick' event to a timer everytime the user loaded a map. (SDW)
+
+
+Changes for 1.0.0.8
+
+* When catching an error, let the user see the complete error message by re-throwing it. (SDW)
+
+* Added setting to stop the loading of an XML file when an error is found. (SDW)
+
+* Increase xml loading speed and efficiency. (SDW)
+
+* Add error catching debugging information to Part 2 when the program fails to load an xml file. (SDW)
+
+* Fix problem where it doesn't save data that was changed in the current step when saving using the button in the bottom-left. (SDW)
+
+* Make it so the program only writes the mapNotes setting if the user actually enters notes. (SDW)
+
+* Make the program inform the user of newer version by checking the available versions on the download page. (SDW)
+
+* Update the window text every time the user advances to the next step to show how much the user has left to complete of the map. (SDW)
+
+* Add a cancel button to the String Retriever. (SDW)
+
+* Fix problem where the StringRetriever will not always work correctly when the user presses the 'Enter' key. (SDW)
+
+* Make it so the Map Creator runs the map loading method in a seperate thread. (SDW)
+
+* Change Part 2 Title Text to "TripleA Map Creator - Part 2" when the program finishes loading a map. (SDW)
+
+* Improve the scrolling quality on the territory input panels of Part 2. (SDW)
+
+* Fix some misleading help information on Part 2.
+
+* Update the 'readme.txt' file to contain a link to the .NET Framework if the program fails to start. (SDW)
+
+* Change the help for when Part 2 crashes when it tries to find the polygons for a territory and can't find it. (SDW)
+
+* Make it so Part 1 of the Map Creator resizes the step instructions buttons and centers the run utility button. (SDW)
+
+
+Changes for 1.0.0.7
+
+* Added help for Step 16 of Part 2. (SDW)
+
+* Fix problem where user could accidentally change tab page with cursor keys without updating step display. (SDW)
+
+* Make it so the program resizes the Map Notes textbox to better fit the window. (SDW)
+
+* Make it so the Map Creator files are contained in a folder with the version number as the folder name. (SDW)
+
+* Make it so the String Retriever window focuses on the text so the user can just start typing and the text will change. (SDW)
+
+* Make it so the String Retriever window would only return text if it contains a character other than space. (SDW)
+
+* Make it so the program asks if it should re-create the settings.inf file if it doesn't exist. (SDW)
+
+* Make it so that the program asks for the owner of units added to water territories. (SDW)
+
+* Make it so when the user is entering the territory ownership, the ownership changing window uses a combobox with the list of players. (SDW)
+
+* Make it so when the user is entering the territory production, the production entering window uses a numerical up-down control. (SDW)
+
+* Make it so the program changes the color of all the territories that used to be canals when deleting all canals. (SDW)
+
+* Make it so Part 1 of the Map Creator deletes the temporary map folder when it's done using it. (SDW)
+
+* Make it so that when the user is entering units, the user can remove all units by deleting the enter value. (SDW)
+
+* Fix problem where it resets the territory ownership when going back then forward again. (SDW)
+
+* Made it so the user can skip entering the map properties for a map that already has the map.properties file created. (SDW)
+
+* Fix problem where the Map Creator would change the map name to lower case when loading then saving. (SDW)
+
+* Fixed big error where the Auto-Placement-Finder would not work properly if the map.properties file did not contain a definition for the unit's scale. (SDW)
+
+* Updated Auto-Placement-Finder guidance text to include help for the newest versions of the map utilities. (SDW)
+
+* Fix problem where Part 1 of the Map Creator would crash when trying to overwrite 'misc' folder data. (SDW)
+
+* Fix problem where the Auto-Fill would make battleships not two-hit units. (SDW)
+
+
+Changes for 1.0.0.6
+
+* Fix problem where Part 1 would not copy the needed 'misc' folder when finding units' placements (SDW)
+
+* Add a halfway finished tab page to Part 1 informing the user to start Part 2 (SDW)
+
+* Fix tool-tips for Part 1 (SDW)
+
+* Fix problem where program would crash if the directory C:\Program Files\TripleA\ did not exist (SDW)
+
+* Fix problem where the screen would flicker after adding a connection (SDW)
+
+* Make it so the territory definition, connection, ownership, unit placements, and attachments are organized by owner (SDW)
+
+
+
+Changes for 1.0.0.5
+
+* Fix multiple errors with mod creation (SDW)
+
+* Add error catching to the Image Extractor (SDW)
+
+* Add a player color selection window to Part 1 (SDW)
+
+* Add the ability to automatically supply the unit's scale when running the Auto Placement Finder (SDW)
+
+* Add a map notes textbox. (SDW)
+
+
+
+Changes for 1.0.0.4
+
+* Add a Map Image Extraction Utility and a Mod Creation Guide (SDW)
+
+
+
+Changes for 1.0.0.3
+
+* Fix a few small errors with the Part 2 (SDW)
+
+
+
+Changes for 1.0.0.2
+
+* Fix a small error with the Automatic Connection Finder (SDW)
+
+
+
+Changes for 1.0.0.1
+
+* Fix a small error with the Xml writing (SDW)

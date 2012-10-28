@@ -1,0 +1,215 @@
+#summary A guide to creating a map using the map creator.
+#labels Phase-Support
+
+= Map Creation Guide =
+{{{
+This document is a guide to how to create a map using the map creator.
+
+1. Create a new folder that will contain all the map files. (This folder can be created wherever you want it.)
+
+2. Create the map image using an image editor such as Windows Paint or Adobe Photoshop.
+    A. Open the image editor program and create a blank image.
+    B. Use the paint can or fill tool and cover the entire image with the color white.
+    C. Draw all the border lines for the territories using the color black. (It must be completely black to work: #000000)
+    D. Use the paint can or fill tool and fill in all the sea territories with the color blue. (You can actually use any color you want, but blue is the only one that makes sense.)
+    E. Save the image you created in your map’s folder. (The one you made earlier.)
+
+3. Create a folder named ’flags’ in your maps folder.
+
+4. Create a folder named ’units’ in your maps folder.
+
+5. For every player in your map that is not already included in the attached images that come with TripleA(Americans, Australians, British, Canadians, Chinese, Germans, Italians, Japanese, Neutral, Puppet_States, Russians), do this:
+    A. Create a flag image for the player in png or gif format and save it in the ’flags’ folder using the player’s name as the image name.
+    B. Create a folder using the player’s name as the folder name.
+    C. For every unit the player has, do this:
+        1. Create an image for the unit in png format and save it using the unit’s name as the file name and place it in the folder with the same name as the player.
+
+Note: The players that are included with TripleA do not contain the images for all the different types of units. Any unit that is not included will have to be made manually. The following units are the ones already included with TripleA: aaGun, armour, artillery, battleship, battleship_hit, bomber, bomber_hb, bomber_lr, bomber_lr_hb, carrier, cruiser, destroyer, factory, factory_it, fighter, fighter_jp, fighter_lr, fighter_lr_jp, halftrack, infantry, marine, rockets, s_destroyer, submarine, submarine_ss, and transport.
+
+6. Open part 1 of the map creator program.
+
+7. Make sure that the instructions shown were followed and click the ’Next’ button.
+
+8. Click the ’Browse’ button and locate the map’s folder.
+
+9. In the ’Initial Units Scale’ textbox, enter the scaling amount used when the units are drawn in TripleA. Set this value to 1.00 if you want the units to be shown at the size they were drawn. If you want the units to be shown in TripleA smaller or larger you simply increase or decrease the number. (It has to match one of the following options: .50, .5625, .6666, .75, .8333, .875, 1.00, 1.25)
+
+10. In the ’Map Size’ textbox, enter the size(dimensions) of the map’s image. Example: 2004,1680
+
+11. In the ’Has Relief Tiles’ textbox, enter whether or not you have created relief tiles for the map. (A relief image is an image that is displayed over the map that makes the map look nicer. The relief tiles are the pieces of the relief image put in seperate files.)
+
+12. In the ’Scroll Wrap’ textbox, enter whether or not you want the map to have scroll wrap enabled. Scroll wrap is used to allow the user to move to the edge of the map and continue going, resulting in one side of the map being shown next to the opposite side. Only use this if the map is complete, such as an image of the earth.
+
+13. For every player in the map, do the following:
+    A. If necessary, click the ’New Player’ button.
+    B. In the ’Player Name’ textbox, enter the name of the player.
+    C. Choose the color that will be shown for the player’s territories by pressing the button to the right and selecting the color using a color dialog or by entering the color you want in the ’Player Color’ textbox. (It needs to be a six digit color such as: 028805, b16708, cad82e, cfadc8, fbaa29, 9ea8b4)
+
+14. Proceed to the next step.
+
+Note: The following map utilities listed in this guide use command prompt windows while running. If errors occur in the utilities, the errors will be shown in those windows. If you want to keep these windows from closing so you can see the errors, hold ’ctrl’ on the keyboard while you press the button to start the map utility.
+
+15. Click the ’Run Center Picker’ button and follow the instructions.
+
+16. Proceed to the next step.
+
+17. Click the ’Run Polygon Grabber’ button and follow the instructions.
+
+18. Proceed to the next step.
+
+19. Proceed to the next step and run the automatic placement finder unless you want to pick the placements manually. Picking the placements manually is very time-consuming when using the Placement Picker.
+
+20. Proceed to the ’Tile Image Breaker’ step, click the ’Run Tile Image Breaker’ button, and follow the instructions.
+
+21. Proceed to the next step.
+
+22. If you have relief tiles for the map, click the ’Run Relief Image Breaker’ button and follow the instructions.
+
+23. Proceed to the next step.
+
+24. Either click the ’Run Image Shrinker’ button and follow the instructions, or use another image editing program and shrink the map image yourself and save it as ’smallMap.jpeg’ in your map’s folder.
+
+25. Close the first part of the map creator and open the second part.
+
+26. In the ’Map Name’ textbox, enter the name of the map.
+
+27. In the ’Map Version’ textbox, enter the map version.
+
+28. In the ’Resource Name’ textbox, enter the name of the resources used in your map(’IPCs’ have been replaced recently with ’PUs’. ’IPCs’ will no longer work as the resource name).
+
+29. Click the first ’Browse’ button, and locate the map’s image file.
+
+30. Click the second ’Browse’ button, and locate the map’s centers.txt file.
+
+31. Enter a word or a group of letters that is only found in the names of the sea zones that will be used to identify the territories that are water. (Examples: SZ, Sea Zone, Pacific, Atlantic, Water)
+
+32. Proceed to the next step.
+
+33. For every territory that is impassable, a capitol, a victory city, or water, left click on it and supply the territory’s information by answering the questions.
+
+34. Proceed to the next step.
+
+35. If you want the program to automatically find the connections between all the territories do the following:
+    A. Click the ’Auto-Fill’ button.
+    B. Click ’Yes’.
+    C. In the ’Line Width’ textbox enter the width of the lines in the map.
+    D. If you want the program to search for connections to islands, check the ’Perform Island Searching’ option.
+    E. Click the ’Start’ button and wait for it to finish.
+
+36. If you want to enter the connections yourself, do the following:
+    A. Click on the first territory in the connection.
+    B. Click on the second territory in the connection.
+    Note: If you want to remove a connection, right-click on one of the territories in the connection, and recreate the connections that you want to keep from that territory.
+
+37. Proceed to the next step.
+
+38. For every player do the following:
+    A. If you need to, click the ’New Player’ button.
+    B. In the ’Player Name’ textbox, enter the name of the player.
+    C. In the ’Player Alliance’ textbox, enter the alliance the player belongs to. (If you want the player to be independent, just make the alliance the same name as the player.)
+    D. In the ’Initial Resources’ textbox, enter the amount of resources(PUs) the player begins with.
+    
+39. Proceed to the next step.
+
+40a. If you want the program to automatically enter some of the commonly used units, click the ’Auto-Fill’ button and click ’Yes’.
+
+40b. If you want to enter the map’s units yourself, do the following for every unit you want in your map:
+    A. If you need to, click the ’New Unit’ button.
+    B. In the ’Unit Name’ textbox, enter the name of the unit.
+    C. In the ’Buy Cost’ textbox, enter the amount of resources(PUs) needed to buy the unit.
+    D. In the ’Buy Quantity’ textbox, enter the amount of units to receive with each purchase.
+
+41. Proceed to the next step.
+
+42. If you want the program to automatically enter the Gameplay Sequences, click the ’Auto-Fill’ button and click ’Yes’.
+
+43. If you want to enter the Gameplay Sequences yourself, do the following for each sequence you want to add: (You can click the ’Available Choices’ button to view all the gameplay sequences that are available.)
+    A. If you need to, click the ’New Gameplay Sequence’ button.
+    B. In the ’Sequence Name’ textbox, enter the name of the gameplay sequence.
+    C. In the ’Class Name’ textbox, enter the name of the TripleA class the sequence uses.
+    D. In the ’Display’ textbox, enter the text that is displayed for the gameplay sequence in TripleA.
+
+44. Proceed to the next step.
+
+45. If you want the program to automatically enter the Player Sequences, click the ’Auto-Fill’ button and click ’Yes’.
+
+46. If you want to enter the Player Sequences yourself, do the following for each sequence you want to add:
+    A. If you need to, click the ’New Player Sequence’ button.
+    B. In the ’Sequence Name’ textbox, enter the name of the player sequence.
+    C. In the ’Gameplay Sequence’ textbox, enter name of the Gameplay Sequence that the player sequence uses.
+    D. In the ’Player’ textbox, enter the name of the player that the Player Delegate is attached to.
+    E. In the ’Max Run Count’ textbox, enter the maximum number of times the Sequence can be used in the game. (You can set this value to 0 if you do not want the sequence to have a run limit)
+
+47. Proceed to the next step.
+
+48. If you want the program to automatically enter some of the commonly used technologies, click the ’Auto-Fill’ button and click ’Yes’.
+
+49. If you want to enter the Technologies yourself, do the following: (You can click the ’Available Choices’ button to view all the technologies that are available.)
+    A. If you need to, click the ’New Technology’ button.
+    B. In the ’Technology Name’ textbox, enter the name of the technology that can be researched and unlocked by the player.
+    C. In the ’Player’ textbox, enter the name of the player that is able to research the technology.
+    D. In the ’Already Enabled’ textbox, enter whether the technology should be unlocked for the selected player when the game first starts.
+
+50. Proceed to the next step.
+
+51. If you want the program to automatically add all the units to the production frontier being shown, click the ’Auto-Fill’ button and click ’Yes’.
+
+52. If you want to enter the Production Frontiers yourself, do the following:
+    A. Go to each player’s frontier tab, and do the following:
+        1. For each unit you want to add to the frontier, click the ’New Unit’ button(If Necessary) and enter the name of the unit in the textbox.
+
+Note: A production frontier is just a list of units that a player is allowed to purchase.
+
+53. Proceed to the next step.
+
+54. If you want the program to automatically enter the default attachments for the units that are commonly used, click the ’Auto-Fill’ button and click ’Yes’.
+
+55. If you want to enter the Unit Attachments yourself, do the following: (You can click the ’Available Choices’ button to view all the unit attachment that are available.)
+    A. Go to each units’s attachments tab, and do the following:
+        1. For each attachment you want to add to the unit’s attachments, do the following:
+            A. Click the ’Add Attachment’ button(If Necessary)
+            B. Enter the name of the unit attachment that is applied to the unit in the ’Attachment Name’ textbox
+            C. Enter the attachment value in the ’Value’ textbox.
+
+56. Proceed to the next step.
+
+57. For each territory, click on the territory and enter the territory’s production amount in the window that appears.
+
+58. Proceed to the next step.
+
+59. For each canal you want to add, do the following:
+    A. Click on the first land territory that forms(Touches) the canal.
+    B. Click on the second land territory that forms(Touches) the canal and click ’Yes’.
+
+Note: To remove all the canals from the map, right click on one of the territories and click ’Yes’.
+
+60. Proceed to the next step.
+
+61. For each territory, click on the territory and enter the name of the territory’s new owner in the window that appears. 
+
+62. Proceed to the next step.
+
+63. For each territory, click on the territory and enter the territory’s units in the window that appears. To do so, use the + and - buttons under each unit’s name to add or remove one of that unit. The changes made using the + and - buttons will update the textbox at the bottom which actually sets the units of the territory. If you would like, you can also edit the text in the textbox directly which will cause the unit amounts shown above it to be updated. (Example: infantry:2,artillery:2,armour:4,fighter:2) 
+
+64. Proceed to the next step.
+
+65. If you want the program to automatically enter the Game Settings (It just enters a few commonly used game settings), click the ’Auto-Fill’ button and click ’Yes’.
+
+66. If you want to enter the Game Settings yourself, do the following for each Setting you want to add: (You can click the ’Available Choices’ button to view all the game settings that are available.)
+    A. If you need to, click the ’New Setting’ button.
+    B. In the ’Setting Name’ textbox, enter the name of the setting that is applied to the map.
+    C. In the ’Value’ textbox, enter the value of the setting.
+    D. In the ’Editable’ textbox, enter whether players are allowed to change the value of the setting when the map is being started.
+    E. In the ’Min. N.’ textbox, enter the lowest number that the value can be set to when the user sets the game options in TripleA. (Leave 0 if the setting value is not a number)
+    F. In the ’Max. N.’ textbox, enter the highest number that the value can be set to when the user sets the game options in TripleA. (Leave 0 if the setting value is not a number)
+
+67. Proceed to the next step.
+
+68. If you want your map to have map notes, enter the map notes in the textbox. You can enter the notes in plain text or html.
+
+69. Click the ’Save Map To File’ button and save the file in the map’s ’games’ folder. (Create the ’games’ folder if not already created)
+
+70. Congratulations!! You’re Done!! If you want to post your map so others can use it, go to the TripleA Maps And Mods Forums located here: ’http://n2.nabble.com/Maps-and-Mods-f1671664.html’, and create a new post(topic) with information about your map and a link to a zip file containing your map.
+
+Note: If you want to save the map before you’re finished, select ’Save Map Xml’ in the ’File’ menu and then you can load the xml file back later.
+}}}
