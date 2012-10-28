@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="button5.Text" xml:space="preserve">
+    <value>Before you use this program, make sure:
+
+A. The map's folder contains:
+    1. An image of the map in png or gif image format (Read 2nd note...)
+    2. A 'units' folder containing all the unit images in png format (Read 3rd note...)
+    3. A 'flags' folder containing all the flag images in gif or png format (Read 3rd note...)
+
+Note: The unit images must be saved in png format, the flag images in png or gif format, and the map image in png or gif format.
+
+Note: When creating the map image, remember that the borders between territories must be completely black, the inside of land territories must be completely white, and the inside of sea territories must be colored.
+
+Note: The players that are included in TripleA by default are the following countries: Americans, Australians, British, Canadians, Chinese, Germans, Italians, Japanese, Neutral, Puppet_States, and Russians. Also note that the flags for those countries are already inlcuded, but the only units included are the following: aaGun, armour, artillery, battleship, battleship_hit, bomber, bomber_hb, bomber_lr, bomber_lr_hb, carrier, cruiser, destroyer, factory, factory_it, fighter, fighter_jp, fighter_lr, fighter_lr_jp, halftrack, infantry, marine, rockets, s_destroyer, submarine, submarine_ss, and transport. An image must be created for every unit that was not listed here.</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="button14.Text" xml:space="preserve">
+    <value>                              Instructions for using the 'Center Picker' 
+
+When a window opens that asks you to select the map, select the image file for your map.
+
+When it asks for a polygons file, click "Cancel".
+
+When it displays the map, click on the center of every territory and name it by entering its name in the window that opens.
+
+When you've finished, save the centers file by selecting "Save Centers" in the "File" menu and selecting the map folder.
+
+
+Note: If you want to remove a territory center, right-click on the red dot shown at the territory center.
+
+Note: If your map contains sea zones with islands contained in them, the name of the sea zones must end with "Sea Zone" exactly for the islands to be clickable in the game.</value>
+  </data>
+  <data name="button6.Text" xml:space="preserve">
+    <value>                              Instructions for using the 'Polygon Grabber'
+
+When a window opens that asks you to select a map, select the image file for your map.
+
+When it asks for a centers file, select the centers file for your map.
+
+When it displays the map, double-right-click on every territory and confirm it by pressing the space bar.
+
+When you've finished, save the file by selecting "Save Polygons" in the "File" menu and selecting the map folder.
+
+
+Note: If a territory has any black jut-outs in the territory boundary (A straight line sticking out of the outline into the territory, etc), the polygon grabber will report an error. To fix this, open the map's image file and remove all the jut-outs from every territory that the Polygon Grabber fails to grab.  </value>
+  </data>
+  <data name="button9.Text" xml:space="preserve">
+    <value>                              Instructions for using the 'Placement Picker'
+
+(Note: The Auto-Placement Finder is suggested over the Placement Picker. Unless you have reason for using the Placement Picker, please use the Auto-Placement Finder in the next step)
+
+When a window opens that asks you to select a map, select the image file for your map.
+
+When it asks for a polygons file, select the polygons file for your map.
+
+When it displays the map, left-click on every territory to select it and ctrl-click on every place within the territory where you want a placement added.
+
+When you've finished, save the file by clicking "File", "Save Placements", then select the map directory and click save.</value>
+  </data>
+  <data name="button15.Text" xml:space="preserve">
+    <value>                         Instructions for using the 'Auto-Placement Finder'
+
+When a window opens that asks you to enter the map name, type in 'temp'.
+
+If a window opens that asks you for the Unit's Scale, enter the scaling amount that will be used when drawing the unit images in TripleA. (Entered earlier in the map properties step)
+
+When a window opens that asks where to save 'place.txt', select the map's folder.</value>
+  </data>
+  <data name="button17.Text" xml:space="preserve">
+    <value>                         Instructions for using the 'Tile Image Breaker'
+
+When a window opens that says 'Where to save tile images', select the folder named 'baseTiles' located in your map's folder.
+
+When a window opens that asks you to select the map, select the map image file.
+
+Wait for the window to finish running and automatically close...</value>
+  </data>
+  <data name="button19.Text" xml:space="preserve">
+    <value>                         Instructions for using the 'Relief Image Breaker'
+
+(If you have not created a relief image for the map, proceed to the next step.)
+
+When a window opens that says 'Where to save relief images', go to the TripleA 'maps' folder, go to the 'temp' folder, and select the 'reliefTiles' folder.
+
+When a window opens that asks you to select the map, select the relief image file.
+
+When a window opens that asks you if it should process Sea Zones only, enter Y if you want the relief image to be displayed only over the water, or N if you want the relief image displayed over the land and sea territories.
+
+When a window opens that asks you to enter the map name, type in 'temp'.
+
+Wait for the window to finish running and automatically close...
+
+Note: The default location for the TripleA 'maps' folder is: "C:\Program Files\TripleA\&lt;triplea version&gt;\maps\"
+</value>
+  </data>
+  <data name="button21.Text" xml:space="preserve">
+    <value>                         Instructions for using the 'Image Shrinker'
+
+When a window opens that asks you to select the large image, select the map image file.
+
+When a window opens that asks for the scale, enter the scaling amount for the size of the small map image compared to the large map. For example, if you wanted the small map image displayed in TripleA at the top-right corner to be one-tenth the size if the map, enter .1 in the window. For the small map to be one-fifth the map size you would enter .2, and so on.
+</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>46</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAwACACoCAAAFgAAACgAAAAgAAAAQAAAAAEACAAAAAAAgAQAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAwMDAAMDcwADwyqYAACBAAAAgYAAAIIAAACCgAAAg
+        wAAAIOAAAEAAAABAIAAAQEAAAEBgAABAgAAAQKAAAEDAAABA4AAAYAAAAGAgAABgQAAAYGAAAGCAAABg
+        oAAAYMAAAGDgAACAAAAAgCAAAIBAAACAYAAAgIAAAICgAACAwAAAgOAAAKAAAACgIAAAoEAAAKBgAACg
+        gAAAoKAAAKDAAACg4AAAwAAAAMAgAADAQAAAwGAAAMCAAADAoAAAwMAAAMDgAADgAAAA4CAAAOBAAADg
+        YAAA4IAAAOCgAADgwAAA4OAAQAAAAEAAIABAAEAAQABgAEAAgABAAKAAQADAAEAA4ABAIAAAQCAgAEAg
+        QABAIGAAQCCAAEAgoABAIMAAQCDgAEBAAABAQCAAQEBAAEBAYABAQIAAQECgAEBAwABAQOAAQGAAAEBg
+        IABAYEAAQGBgAEBggABAYKAAQGDAAEBg4ABAgAAAQIAgAECAQABAgGAAQICAAECAoABAgMAAQIDgAECg
+        AABAoCAAQKBAAECgYABAoIAAQKCgAECgwABAoOAAQMAAAEDAIABAwEAAQMBgAEDAgABAwKAAQMDAAEDA
+        4ABA4AAAQOAgAEDgQABA4GAAQOCAAEDgoABA4MAAQODgAIAAAACAACAAgABAAIAAYACAAIAAgACgAIAA
+        wACAAOAAgCAAAIAgIACAIEAAgCBgAIAggACAIKAAgCDAAIAg4ACAQAAAgEAgAIBAQACAQGAAgECAAIBA
+        oACAQMAAgEDgAIBgAACAYCAAgGBAAIBgYACAYIAAgGCgAIBgwACAYOAAgIAAAICAIACAgEAAgIBgAICA
+        gACAgKAAgIDAAICA4ACAoAAAgKAgAICgQACAoGAAgKCAAICgoACAoMAAgKDgAIDAAACAwCAAgMBAAIDA
+        YACAwIAAgMCgAIDAwACAwOAAgOAAAIDgIACA4EAAgOBgAIDggACA4KAAgODAAIDg4ADAAAAAwAAgAMAA
+        QADAAGAAwACAAMAAoADAAMAAwADgAMAgAADAICAAwCBAAMAgYADAIIAAwCCgAMAgwADAIOAAwEAAAMBA
+        IADAQEAAwEBgAMBAgADAQKAAwEDAAMBA4ADAYAAAwGAgAMBgQADAYGAAwGCAAMBgoADAYMAAwGDgAMCA
+        AADAgCAAwIBAAMCAYADAgIAAwICgAMCAwADAgOAAwKAAAMCgIADAoEAAwKBgAMCggADAoKAAwKDAAMCg
+        4ADAwAAAwMAgAMDAQADAwGAAwMCAAMDAoADw+/8ApKCgAICAgAAAAP8AAP8AAAD//wD/AAAA/wD/AP//
+        AAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwACAgICAgICAgICAgICAgIA4ODg
+        4ODg4ODgAGRkAABkAAICAgICAgICAgICAgICAgDg4ODg4ODg4OAAZGQAAGQAAgICAgICAgICAgICAgIA
+        4ODg4ODg4ODgAABkZAAAZAACAgICAgICAgICAgICAODg4ODg4ODg4OAAZGRkAABkAAICAgICAgICAgIC
+        AgAA4ODg4ODg4ODg4ABkZGQAAGQAAgICAgICAgICAgIAAODg4ODg4ODg4ODgAABkZAAAZAAAAgICAgIC
+        AAAAAODg4ODg4ODg4ODg4ODgAGRkAABkZAACAgIAAADg4ODg4ODg4AAAAODg4ODg4OAAZGQAAGRkAAIC
+        AgDg4ODg4ODg4AAAAAICAODg4ODg4ABkZAAAZGQAAgIAAODg4ODgAAAAAAICAgIAAODg4ODgAGRkAABk
+        ZAACAgDg4ODgAAAAAgICAgICAgIA4ODg4OAAZGQAAGRkAAAAAODg4OAAAgICAgICAgICAgAAAODg4ABk
+        ZAAAZGQA4ODg4ODg4AACAgICAgICAgICAgIA4ODgAGRkAABkZADg4ODg4ODgAAAAAgICAgICAgICAgDg
+        4OAAZGQAAGRkAODg4ODg4ODg4AAAAAACAgICAgICAODg4ABkZAAAZGQA4ODgAAAAAODg4ODg4AAAAgIC
+        AgIA4ODgAGRkAABkZADg4OAAAgIAAODg4ODg4AAAAgICAADg4OAAZGQAAGRkAODg4AACAgIA4ODg4ODg
+        4AAAAgAA4ODg4ABkZAAAZGQA4ODgAAICAgIA4ODg4ODg4OAAAODg4ODgAGRkAABkZADg4OAAAAICAgDg
+        4ODg4ODg4ODg4ODg4OAAZGQAAGRkAODg4OAAAgICAODg4ODg4ODg4ODg4ODg4AAAZAAAZGQA4ODg4AAA
+        AAAA4ODg4AAAAAAAAOAAAAAA4ABkAABkZADg4ODg4ODg4ODg4OAAAAICAgIAAAACAgDgAGQAAGRkAODg
+        4ODg4ODg4ODg4AACAgICAgICAgICAgAAZAAAZGQAAODg4ODg4ODg4ODgAAICAgICAgICAgICAgBkAABk
+        ZGQA4ODg4ODg4ODg4OAAAgICAgICAgICAgICAGQAAGRkZADg4ODg4ODg4ODg4OAAAgICAgICAgICAgIA
+        ZAAAZGQAAODg4ODg4ODg4ODg4AAAAAAAAgICAgICAgBkAABkZADg4ODg4ODg4ODg4ODg4ODg4AAAAgIC
+        AgICAGQAAGRkAODg4ODg4ODg4ODg4ODg4ODg4OAAAAAAAAAAZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAA
+</value>
+  </data>
+</root>

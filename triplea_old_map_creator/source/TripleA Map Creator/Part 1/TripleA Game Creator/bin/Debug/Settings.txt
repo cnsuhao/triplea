@@ -1,0 +1,2 @@
+Stop Loading XML File When Error Is Found="false"
+Java Heap Size="5000"

@@ -1,0 +1,14 @@
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Game Creator\Part 1\Current\TripleA Game Creator\bin\Release\TripleA Map Creator.exe.config
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Game Creator\Part 1\Current\TripleA Game Creator\bin\Release\TripleA Map Creator.exe.manifest
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Game Creator\Part 1\Current\TripleA Game Creator\bin\Release\TripleA Map Creator.application
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Game Creator\Part 1\Current\TripleA Game Creator\bin\Release\TripleA Map Creator.exe
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Game Creator\Part 1\Current\TripleA Game Creator\bin\Release\TripleA Map Creator.pdb
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Game Creator\Part 1\Current\TripleA Game Creator\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Game Creator\Part 1\Current\TripleA Game Creator\obj\Release\TripleA_Game_Creator.Form1.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Game Creator\Part 1\Current\TripleA Game Creator\obj\Release\TripleA_Game_Creator.Properties.Resources.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Game Creator\Part 1\Current\TripleA Game Creator\obj\Release\TripleA Game Creator.csproj.GenerateResource.Cache
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Game Creator\Part 1\Current\TripleA Game Creator\obj\Release\TripleA Map Creator.TrustInfo.xml
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Game Creator\Part 1\Current\TripleA Game Creator\obj\Release\TripleA Map Creator.exe.manifest
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Game Creator\Part 1\Current\TripleA Game Creator\obj\Release\TripleA Map Creator.application
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Game Creator\Part 1\Current\TripleA Game Creator\obj\Release\TripleA Map Creator.exe
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Game Creator\Part 1\Current\TripleA Game Creator\obj\Release\TripleA Map Creator.pdb

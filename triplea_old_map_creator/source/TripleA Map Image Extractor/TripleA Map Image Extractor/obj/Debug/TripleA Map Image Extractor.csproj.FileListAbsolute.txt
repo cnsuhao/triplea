@@ -1,0 +1,31 @@
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Image Extractor\TripleA Map Image Extractor\bin\Debug\TripleA Map Image Extractor.exe
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Image Extractor\TripleA Map Image Extractor\bin\Debug\TripleA Map Image Extractor.pdb
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Image Extractor\TripleA Map Image Extractor\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Image Extractor\TripleA Map Image Extractor\obj\Debug\TripleA_Map_Image_Extractor.ProgressBarWindow.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Image Extractor\TripleA Map Image Extractor\obj\Debug\TripleA_Map_Image_Extractor.Properties.Resources.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Image Extractor\TripleA Map Image Extractor\obj\Debug\TripleA Map Image Extractor.csproj.GenerateResource.Cache
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Image Extractor\TripleA Map Image Extractor\obj\Debug\TripleA Map Image Extractor.exe
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Image Extractor\TripleA Map Image Extractor\obj\Debug\TripleA Map Image Extractor.pdb
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Image Extractor\Current\TripleA Map Image Extractor\obj\Debug\TripleA Map Image Extractor.exe
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Image Extractor\Current\TripleA Map Image Extractor\obj\Debug\TripleA Map Image Extractor.pdb
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Image Extractor\Current\TripleA Map Image Extractor\bin\Debug\TripleA Map Image Extractor.exe.config
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Image Extractor\Current\TripleA Map Image Extractor\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Image Extractor\Current\TripleA Map Image Extractor\obj\Debug\TripleA_Map_Image_Extractor.ProgressBarWindow.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Image Extractor\Current\TripleA Map Image Extractor\obj\Debug\TripleA_Map_Image_Extractor.Properties.Resources.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Image Extractor\Current\TripleA Map Image Extractor\obj\Debug\TripleA Map Image Extractor.csproj.GenerateResource.Cache
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Image Extractor\Current\TripleA Map Image Extractor\bin\Debug\TripleA Map Image Extractor.exe
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Image Extractor\Current\TripleA Map Image Extractor\bin\Debug\TripleA Map Image Extractor.pdb
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Creator\TripleA Map Image Extractor\Current\TripleA Map Image Extractor\bin\Debug\TripleA Map Image Extractor.exe.config
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Creator\TripleA Map Image Extractor\Current\TripleA Map Image Extractor\obj\Debug\TripleA Map Image Extractor.exe
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Visual C#\TripleA Map Creator\TripleA Map Image Extractor\Current\TripleA Map Image Extractor\obj\Debug\TripleA Map Image Extractor.pdb
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Image Extractor\TripleA Map Image Extractor\bin\Debug\TripleA Map Image Extractor.exe.config
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Image Extractor\TripleA Map Image Extractor\obj\Debug\TripleA Map Image Extractor.exe
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Image Extractor\TripleA Map Image Extractor\obj\Debug\TripleA Map Image Extractor.pdb
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Image Extractor\TripleA Map Image Extractor\bin\Debug\TripleA Map Image Extractor.exe
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Image Extractor\TripleA Map Image Extractor\bin\Debug\TripleA Map Image Extractor.pdb
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Image Extractor\TripleA Map Image Extractor\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Image Extractor\TripleA Map Image Extractor\obj\Debug\TripleA_Map_Image_Extractor.ProgressBarWindow.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Image Extractor\TripleA Map Image Extractor\obj\Debug\TripleA_Map_Image_Extractor.Properties.Resources.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Image Extractor\TripleA Map Image Extractor\obj\Debug\TripleA Map Image Extractor.csproj.GenerateResource.Cache
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Image Extractor\TripleA Map Image Extractor\obj\Debug\TripleA_Map_Image_Extractor.Form1.resources
+C:\Documents and Settings\Stephen\Desktop\Programming\Projects\Online Projects\TripleA Map Creator\TripleA Map Image Extractor\TripleA Map Image Extractor\obj\Debug\TripleA_Map_Image_Extractor.ExceptionViewer.resources
