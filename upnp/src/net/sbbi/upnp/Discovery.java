@@ -232,8 +232,6 @@ public class Discovery
 		
 		final DiscoveryResultsHandler handler = new DiscoveryResultsHandler()
 		{
-			
-			@Override
 			public void discoveredDevice(final String usn, final String udn, final String nt, final String maxAge,
 						final URL location, final String firmware)
 			{

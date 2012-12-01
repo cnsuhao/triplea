@@ -227,7 +227,6 @@ public class DiscoveryListener implements Runnable
 		
 	}
 	
-	@Override
 	public void run()
 	{
 		if (!Thread.currentThread().getName().equals("DiscoveryListener daemon"))
