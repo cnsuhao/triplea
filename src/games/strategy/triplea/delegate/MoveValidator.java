@@ -390,7 +390,7 @@ public class MoveValidator
 						&& (!games.strategy.triplea.Properties.getNeutralFlyoverAllowed(data) || isNeutralsImpassable(data)))
 				return result.setErrorReturnResult("Air units cannot fly over neutral territories in non combat");
 		}
-		else if (Match.someMatch(units, Matches.UnitIsSea))
+		else if (Match.someMatch(units, Matches.UnitIsSea) || route.someMatch(Matches.TerritoryIsWater))
 		{
 			// if there are neutral or owned territories, we can not move through them
 			if (navalMayNotNonComIntoControlled && route.someMatch(neutralOrEnemy))

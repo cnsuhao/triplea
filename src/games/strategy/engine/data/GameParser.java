@@ -119,8 +119,8 @@ public class GameParser
 		data = new GameData();
 		// mandatory fields
 		parseInfo(getSingleChild("info", root));
-		parseGameLoader(getSingleChild("loader", root));
 		parseMinimumEngineVersionNumber(getSingleChild("triplea", root, true));
+		parseGameLoader(getSingleChild("loader", root));
 		// if we manage to get this far, past the minimum engine version number test, AND we are still good, then check and see if we have any SAX errors we need to show
 		if (!errorsSAX.isEmpty())
 		{
