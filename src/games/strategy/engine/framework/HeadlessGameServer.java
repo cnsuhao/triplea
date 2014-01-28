@@ -8,6 +8,7 @@ import games.strategy.engine.chat.HeadlessChat;
 import games.strategy.engine.chat.IChatPanel;
 import games.strategy.engine.data.GameData;
 import games.strategy.engine.data.GameParser;
+import games.strategy.engine.data.properties.GameProperties;
 import games.strategy.engine.data.properties.IEditableProperty;
 import games.strategy.engine.data.properties.PropertiesUI;
 import games.strategy.engine.framework.startup.launcher.ILauncher;
@@ -32,6 +33,7 @@ import games.strategy.triplea.Constants;
 import games.strategy.triplea.ui.ErrorHandler;
 import games.strategy.triplea.util.LoggingPrintStream;
 import games.strategy.util.ClassLoaderUtil;
+import games.strategy.util.Util;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -135,7 +137,7 @@ public class HeadlessGameServer
 	{
 		return new String[] { GameRunner2.TRIPLEA_GAME_PROPERTY, TRIPLEA_GAME_HOST_CONSOLE_PROPERTY, TRIPLEA_GAME_HOST_UI_PROPERTY, GameRunner2.TRIPLEA_SERVER_PROPERTY,
 					GameRunner2.TRIPLEA_PORT_PROPERTY, GameRunner2.TRIPLEA_NAME_PROPERTY, GameRunner2.LOBBY_HOST, GameRunner2.LOBBY_PORT, GameRunner2.LOBBY_GAME_COMMENTS,
-					GameRunner2.LOBBY_GAME_HOSTED_BY, GameRunner2.TRIPLEA_SERVER_PASSWORD_PROPERTY };
+					GameRunner2.LOBBY_GAME_HOSTED_BY, GameRunner2.LOBBY_GAME_SUPPORT_EMAIL };
 	}
 	
 	private static void usage()
@@ -237,6 +239,23 @@ public class HeadlessGameServer
 		}
 	}
 	
+	public synchronized void loadGameOptions(final byte[] bytes)
+	{
+		// don't change mid-game
+		if (m_setupPanelModel.getPanel() != null && m_iGame == null)
+		{
+			if (bytes == null || bytes.length == 0)
+				return;
+			final GameData data = m_gameSelectorModel.getGameData();
+			if (data == null)
+				return;
+			final GameProperties props = data.getProperties();
+			if (props == null)
+				return;
+			GameProperties.applyByteMapToChangeProperties(bytes, props);
+		}
+	}
+	
 	public synchronized void loadGameSave(final ObjectInputStream input, final String fileName)
 	{
 		// don't change mid-game
@@ -268,10 +287,17 @@ public class HeadlessGameServer
 			instance.m_iGame = serverGame;
 			if (serverGame != null)
 			{
-				System.out.println("Game running: " + instance.m_iGame.isGameSequenceRunning() + ", GameOver: " + instance.m_iGame.isGameOver() + ", Players: "
+				System.out.println("Game starting up: " + instance.m_iGame.isGameSequenceRunning() + ", GameOver: " + instance.m_iGame.isGameOver() + ", Players: "
 							+ instance.m_iGame.getPlayerManager().toString());
 			}
 		}
+	}
+	
+	public static synchronized void log(final String stdout)
+	{
+		final HeadlessGameServer instance = getInstance();
+		if (instance != null)
+			System.out.println(stdout);
 	}
 	
 	ServerGame getIGame()
@@ -663,7 +689,7 @@ public class HeadlessGameServer
 			}
 		}
 		
-		boolean usagePrinted = false;
+		boolean printUsage = false;
 		for (int argIndex = 0; argIndex < args.length; argIndex++)
 		{
 			boolean found = false;
@@ -686,13 +712,37 @@ public class HeadlessGameServer
 			}
 			if (!found)
 			{
-				System.out.println("Unrecogized:" + args[argIndex]);
-				if (!usagePrinted)
-				{
-					usagePrinted = true;
-					usage();
-				}
+				System.out.println("Unrecogized argument: " + args[argIndex]);
+				printUsage = true;
 			}
+		}
+		{ // now check for required fields
+			final String playerName = System.getProperty(GameRunner2.TRIPLEA_NAME_PROPERTY, "");
+			final String hostName = System.getProperty(GameRunner2.LOBBY_GAME_HOSTED_BY, "");
+			final String comments = System.getProperty(GameRunner2.LOBBY_GAME_COMMENTS, "");
+			final String email = System.getProperty(GameRunner2.LOBBY_GAME_SUPPORT_EMAIL, "");
+			if (playerName.length() < 7 || hostName.length() < 7 || !hostName.equals(playerName) || !playerName.startsWith("Bot") || !hostName.startsWith("Bot"))
+			{
+				System.out.println("Invalide argument: " + GameRunner2.TRIPLEA_NAME_PROPERTY + " and " + GameRunner2.LOBBY_GAME_HOSTED_BY
+							+ " must start with \"Bot\" and be at least 7 characters long and be the same.");
+				printUsage = true;
+			}
+			if (comments.indexOf("automated_host") == -1)
+			{
+				System.out.println("Invalide argument: " + GameRunner2.LOBBY_GAME_COMMENTS + " must contain the string \"automated_host\".");
+				printUsage = true;
+			}
+			if (email.length() < 3 || !Util.isMailValid(email))
+			{
+				System.out.println("Invalide argument: " + GameRunner2.LOBBY_GAME_SUPPORT_EMAIL + " must contain a valid email address.");
+				printUsage = true;
+			}
+			// no passwords allowed for bots
+		}
+		if (printUsage)
+		{
+			usage();
+			System.exit(1);
 		}
 	}
 	
@@ -1542,7 +1592,7 @@ class HeadlessGameSelectorPanel extends JPanel implements Observer
 			}
 		}
 	}*/
-
+	
 	private void selectGameOptions()
 	{
 		// backup current game properties before showing dialog

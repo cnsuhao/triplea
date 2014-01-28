@@ -1,4 +1,6 @@
 Changes for 1.7.0.5
+* Branching some changes from 1.8 to 1.7.0.5 so that both can operate in the same lobby. (veqryn)
+
 * Possible fix for host game hang, when host is launching and another player leaves or joins at start of launch. (veqryn)
 
 * Possible fix for game hang / game freeze during hosting, client start step should now wait for delegate bridge to finish updating. (veqryn)
